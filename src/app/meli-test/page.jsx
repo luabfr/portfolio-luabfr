@@ -43,7 +43,7 @@ const MeliTest =()=>{
 
 	return(
 		<Layout>
-			<h1>esto es "meli-test/page.jsx"</h1>
+			<h1>esto es <strong>meli-test/page.jsx</strong></h1>
 			<Search
 				placeholder="input search text laf"
 				allowClear
