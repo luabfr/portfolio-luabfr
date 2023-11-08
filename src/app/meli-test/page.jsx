@@ -1,70 +1,97 @@
 "use client"
-import React,{ useState }from "react";
-import useApiMeli from "./useApiMeLi"
+import React,{ useState , useEffect}from "react";
+import useApiMeli from "./hooks/useApiMeLi"
 import Layout from "antd/es/layout";
 import { QuestionCircleOutlined } from '@ant-design/icons';
-import { Space,Typography,Button,Flex,Input,Image,Pagination,Card,FloatButton,Spin,Breadcrumb } from 'antd';
+import { Space,Typography,Button,Flex,Input,Image,Pagination,Card,FloatButton,Spin,Breadcrumb,Radio,Select } from 'antd';
+import LayoutLoading from "./components/LayoutLoading"
+import LayoutError from "./components/LayoutError"
 import Link from "next/link";
-import AboutProject from "./AboutProject"
+import AboutProject from "./components/AboutProject"
+import { formatPrice,orderProductsByPrice,orderProductsForPagination } from './components/utils';
 
 const { Search } = Input;
 const { Text,Title } = Typography;
 
 
-const formatPrice = (price,currency_id) => {
-	return new Intl.NumberFormat('es-AR',{
-		style: 'currency',
-		currency: currency_id
-	}).format(price);
-};
+
 
 
 const MeliTest =()=>{
-	const [inputSearchValue,setInputSearchValue] = useState("iphone")
-	const [pagination,setPagination] = useState(1)
+	const [ inputSearchValue , setInputSearchValue ] = useState("iphone")
+	const [ pagination , setPagination ] = useState(1)
+	const [ filterConditionState , setFilterConditionState ] = useState("all")
+	const [ filterCurrencyState , setFilterCurrencyState ] = useState("all")
+	const [ filterSortState,setFilterSortState] = useState("Relevancia")
 	
 	// Search
 	const onSearch = (value,_e,info) => {
 		setInputSearchValue(value)
 		setPagination(1)
+		setFilterConditionState("all") // si hay nueva busqueda, reseteo el filtro
 	};
 
 	// Pagination
 	const paginationChange = (page) => {
-		console.log('paginationChange: ',page)
 		setPagination(page)
 	}
 
+	const onChangeRadioCondition = (e) => {
+		setFilterConditionState(e.target.value)
+	}
 
-	const { data,categoryMost,loading,error } = useApiMeli(inputSearchValue);
+	const onChangeRadioCurrency = (e) => {
+		setFilterCurrencyState(e.target.value)
+	}
+
+	const onChangeSortSelect = (value) => {
+		setFilterSortState(value)
+	}
+
+
+	const { data , categoryMost , loading , error } = useApiMeli(inputSearchValue);
 	if (loading) {
-		return(
-			<Layout style={{ width: "100%", minHeight: "100vh", display: 'flex', alignItems: 'center', justifyContent:"center"}}>
-				<Spin size="large"/>
-			</Layout>
-		)
+		return	<LayoutLoading />		
 	}
 	if (error) {
-		return <div>Error: {error.message}</div>;
+		return <LayoutError error={error}/>
 	}
 	
 
 
-	const arrayDividido = [];
 
-	for (let i = 0; i < data.length; i += 10) {
-		const subArray = data.slice(i,i + 10);
-		arrayDividido.push(subArray);
-	}
+	// const incluirFiltroPorMoneda = false
+	const productsFiltered = data.filter((product) => {
+		if (
+			((filterCurrencyState === "all") || (product.currency_id === filterCurrencyState)) &&
+			((filterConditionState === "all") || (product.condition === filterConditionState)) /*&& 			
+		(!incluirFiltroPorMoneda || (incluirFiltroPorMoneda && product.currency_id === "ARS"))*/
+		) {
+			return true;
+		} else {
+			return false;
+		}
+	});
+
+
+
+	const productsFilteredAndOrdered = orderProductsByPrice(productsFiltered,filterSortState);	
+	const productsByPagination = orderProductsForPagination(productsFilteredAndOrdered);
+
+	// Aca, se pasa el resultado de "orderProductsByPrice(productsFiltered,filterSortState)"
+	// como parametro de la funcion orderProductsForPagination().
+	// es lo mismo que lo que esta arriba, pero en una sola linea
+	// const productsByPagination = orderProductsForPagination( orderProductsByPrice(productsFiltered,filterSortState) );
+
 	
 
+	
+	
 	return(
-		<Layout style={{ width: "100%",display: 'flex',alignItems: 'center',}}>
+		<Layout style={{ width: "100%",display: 'flex',alignItems: 'center', minHeight: "100vh"}}>
 
-			<h1>esto es <strong>meli-test/page.jsx</strong></h1>
-			<Layout style={{ width: "50%",display: 'flex',alignItems: 'center',}}>
-				<Flex style={{ width: "100%",}} vertical>
-
+			<Layout style={{ width: "70%",display: 'flex', marginTop: "4rem"}}>
+				<Flex style={{ width: "100%", marginBottom: "1rem"}}>
 					<Search
 						placeholder="Enter a product to search..."
 						allowClear
@@ -72,54 +99,116 @@ const MeliTest =()=>{
 						size="large"
 						onSearch={onSearch}
 					/>
-					<Flex style={{margin: "1rem 0"}} vertical>
-						<Flex style={{ marginBottom: "1rem" }}>
-							{/* <Text>{categoryMost}</Text> */}
-							<Breadcrumb	separator=">"	items={categoryMost} />
+				</Flex>
+
+
+				<Flex>
+
+					{/* BUSQUEDA Y FILTROS */}
+					{/* BUSQUEDA Y FILTROS */}
+					{/* BUSQUEDA Y FILTROS */}							
+					<Flex style={{ width: "35%",}} vertical>
+						
+						<Flex vertical>							
+							<Text>{"Search result for "}<strong style={{ color: "#4096ff"}}>{inputSearchValue}</strong></Text>
+							<Title level={5}>Search Filters</Title>						
 						</Flex>
 
-						<Text>{"Resultado de búsqueda de "}<strong>{inputSearchValue} {": "}</strong></Text>
 						
+
+						<Flex style={{ marginBottom: "1rem" }} vertical >
+							<Text>Condition:</Text>
+							<Radio.Group onChange={onChangeRadioCondition} defaultValue="all" value={filterConditionState}>
+								<Radio.Button value="all">Any</Radio.Button>
+								<Radio.Button value="new">News</Radio.Button>
+								<Radio.Button value="used">Used</Radio.Button>
+							</Radio.Group>
+						</Flex>
+
+						<Flex style={{ marginBottom: "1rem" }} vertical>	
+							<Text>Order by:</Text>
+							<Select
+								defaultValue="Relevancia"
+								style={{ width: "90%", }}
+								onChange={onChangeSortSelect}
+								options={[
+									{ value: 'Relevancia', label: 'Relevance',},
+									{ value: 'MayorToMinor', label: 'High price', },
+									{ value: 'MinorToMayor', label: 'Low price', }
+								]}
+							/>
+						</Flex>
+
+						
+						<Flex style={{ marginBottom: "1rem" }} vertical >
+							<Text>Currency:</Text>
+							<Radio.Group onChange={onChangeRadioCurrency} defaultValue="all" value={filterCurrencyState}>
+								<Radio.Button value="all">Any</Radio.Button>
+								<Radio.Button value="ARS">Pesos ($)</Radio.Button>
+								<Radio.Button value="USD">Dollars (USD)</Radio.Button>
+							</Radio.Group>
+						</Flex>
 					</Flex>
-				</Flex>
+
+					
+					{/* PRODUCTOS */}
+					{/* PRODUCTOS */}
+					{/* PRODUCTOS */}				
+					<Flex style={{ width: "65%" }}  vertical>
+						<Flex style={{ marginBottom: "1rem" }}>
+							<Breadcrumb separator=">" items={categoryMost} />
+						</Flex>
+						{productsByPagination.length !== 0 && productsByPagination[(pagination-1)].map((item,index) => (
+							<Card style={{ width: "100%" , }} key={index} >
+								<Link href={`/meli-test/${item.id}`} >
+									<Flex>
+										<Flex align="center" vertical style={{width: "160px", minWidth:"160px", justifyContent:"center", marginLeft:"-1rem"}}>
+											<Image
+												alt={item.title}
+												style={{maxHeight: "100px", maxWidth: "100px"}}
+												src={item.thumbnail}
+											/>
+										</Flex>
+
+										<Flex align="start" vertical>
+											<Text style={{ fontSize: "1.6rem",fontWeight: "bold" }}>{formatPrice(item.price,item.currency_id)}</Text>
+											<Text style={{ fontSize: "1.2rem" }} >{item.title}</Text>
+											<Text style={{ color: "#999" }}> { "Condition: " } {item.condition} </Text>			
+										</Flex>
+
+									</Flex>
+								</Link>
+
+							</Card>
+						))}		
+
+						{/* Si no hay productos: */}
+						{productsByPagination.length === 0 &&
+							<Flex style={{padding: "8rem 0", justifyContent: "center"}}>
+								<Title level={3}>
+									{"No products found..."}
+								</Title>
+							</Flex>
+						}
+
+						{/* PAGINATION */}
+						{/* PAGINATION */}
+						{/* PAGINATION */}			
+						<Flex style={{ margin: "2rem 0 4rem",justifyContent: "center" }}>
+							<Pagination
+								defaultCurrent={pagination}
+								onChange={paginationChange}
+								current={pagination}
+								total={productsFilteredAndOrdered.length}
+							/>
+						</Flex>
+
+					</Flex>
+
+
+				</Flex>	
 
 				
-
-				<Flex style={{ width: "100%" }}  vertical>
-					{arrayDividido[(pagination-1)].map((item,index) => (
-						<Card style={{ width: "100%" }} key={index} >
-							<Link href={`/meli-test/${item.id}`} >
-								<Flex>
-									<Flex align="center" vertical style={{width: "160px"}}>
-										<Image
-											alt={item.title}
-											style={{maxHeight: "100px", maxWidth: "100px"}}
-											src={item.thumbnail}
-										/>
-									</Flex>
-
-									<Flex align="start" vertical>
-										<Text style={{ fontSize: "1.6rem",fontWeight: "bold" }}>{formatPrice(item.price,item.currency_id)}</Text>
-										<Text style={{ fontSize: "1.2rem" }} >{item.title}</Text>
-										<Text >{item.id}</Text>
-										{/* MLA1117980186 */}
-									</Flex>
-
-								</Flex>
-							</Link>
-
-						</Card>
-					))}				
-				</Flex>
-
-				<Flex style={{ margin: "1rem 0" }}>
-					<Pagination
-						defaultCurrent={pagination}
-						onChange={paginationChange}
-						current={pagination}
-						total={50}
-					/>
-				</Flex>
 				
 
 			</Layout>

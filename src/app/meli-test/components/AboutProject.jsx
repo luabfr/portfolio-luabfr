@@ -29,7 +29,7 @@ const AboutProject = () => {
 				description="About Project" 
 				/>
 			<Drawer title="About project" placement="right" onClose={onCloseDrawer} open={openDrawer}>
-				<Title	>COMPONENTE AISLADO</Title>
+				<Title>MELI Search</Title>
 				<Text>Este proyecto está hecho en base a la siguiente prueba técnica MELI: 
 					<Link href="/MELI_FrontEnd_Test_Practico.pdf" target="_blank">
 						Ver PDF
