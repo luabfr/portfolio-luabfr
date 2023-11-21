@@ -13,28 +13,30 @@ import Link from 'next/link'
 const { Text,Title } = Typography;
 
 
+interface Params {
+	id: string; // El ID es opcional
+}
 
+type PageProps = {
+	params: Params; // Se espera que 'params' siga la estructura de la interfaz 'Params'
+};
 
+const Page = ({ params }: PageProps)=>{
 
-const Page = ({ params })=>{
-
-	console.log('typeof params',typeof params)
-
-	// typeof params
-
-	const [imgSelected,setImgSelected] = useState("")
+	const [imgSelected,setImgSelected] = useState<string>("")
 	
 	const { itemData,loading,error,breadcrumbState } = useApiMeLiItemById(params.id);
+
+	console.log('itemData', itemData)
+
 	if (loading) {
 		return <LayoutLoading/>
 	}
-	if (error) {
+	if (error ) {
 		return <LayoutError error={error.message} />;
 	}
-	const arrayDeResultados = itemData
-	// console.log('itemData',itemData)
-
-	const changeImgHandler = (imageUrl)=>{
+	
+	const changeImgHandler = (imageUrl:string )=>{
 		setImgSelected(imageUrl)
 	}
 

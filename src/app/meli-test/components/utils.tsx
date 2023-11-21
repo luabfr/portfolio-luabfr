@@ -1,6 +1,6 @@
 
 // formateo de PRECIO y MODENA
-export const formatPrice = (price,currency_id) => {
+export const formatPrice = (price: number,currency_id: string) => {
 	return new Intl.NumberFormat('es-AR',{
 		style: 'currency',
 		currency: currency_id
@@ -8,7 +8,7 @@ export const formatPrice = (price,currency_id) => {
 };
 
 
-export const orderProductsByPrice = (products,filterSortState) => {
+export const orderProductsByPrice = (products: any[],filterSortState: string) => {
 	if (filterSortState === "MayorToMinor") {
 		return products.sort((a,b) => b.price - a.price);
 	} else if (filterSortState === "MinorToMayor") {
@@ -19,8 +19,8 @@ export const orderProductsByPrice = (products,filterSortState) => {
 }
 
 
-export const orderProductsForPagination = (productsFilteredAndOrdered) => {
-	const productsByPaginationX = []
+export const orderProductsForPagination = (productsFilteredAndOrdered: any[]) => {
+	const productsByPaginationX: any[] = []
 	for (let i = 0; i < productsFilteredAndOrdered.length; i += 10) {
 		const subArray = productsFilteredAndOrdered.slice(i,i + 10);
 		productsByPaginationX.push(subArray);

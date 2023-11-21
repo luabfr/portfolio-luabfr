@@ -1,14 +1,14 @@
 "use client"
 import React,{ useState , useEffect}from "react";
-import useApiMeli from "./hooks/useApiMeLi"
+import useApiMeli from "./hooks/useApiMeLi.tsx"
 import Layout from "antd/es/layout";
 import { QuestionCircleOutlined,ArrowLeftOutlined } from '@ant-design/icons';
 import { Space,Typography,Button,Flex,Input,Image,Pagination,Card,FloatButton,Spin,Breadcrumb,Radio,Select } from 'antd';
-import LayoutLoading from "./components/LayoutLoading"
-import LayoutError from "./components/LayoutError"
+import LayoutLoading from "./components/LayoutLoading.tsx"
+import LayoutError from "./components/LayoutError.tsx"
 import Link from "next/link";
-import AboutProject from "./components/AboutProject"
-import { formatPrice,orderProductsByPrice,orderProductsForPagination } from './components/utils';
+import AboutProject from "./components/AboutProject.tsx"
+import { formatPrice,orderProductsByPrice,orderProductsForPagination } from './components/utils.tsx';
 
 const { Search } = Input;
 const { Text,Title } = Typography;
@@ -74,6 +74,7 @@ const MeliTest =()=>{
 	});
 
 
+	console.log('productsFiltered', productsFiltered)
 
 	const productsFilteredAndOrdered = orderProductsByPrice(productsFiltered,filterSortState);	
 	const productsByPagination = orderProductsForPagination(productsFilteredAndOrdered);
