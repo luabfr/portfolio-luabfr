@@ -25,6 +25,5 @@ export const orderProductsForPagination = (productsFilteredAndOrdered) => {
 		const subArray = productsFilteredAndOrdered.slice(i,i + 10);
 		productsByPaginationX.push(subArray);
 	}
-	console.log('orderProductsForPagination =========')
 	return productsByPaginationX
 }

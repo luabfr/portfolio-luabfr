@@ -2,7 +2,7 @@
 import React,{ useState , useEffect}from "react";
 import useApiMeli from "./hooks/useApiMeLi"
 import Layout from "antd/es/layout";
-import { QuestionCircleOutlined } from '@ant-design/icons';
+import { QuestionCircleOutlined,ArrowLeftOutlined } from '@ant-design/icons';
 import { Space,Typography,Button,Flex,Input,Image,Pagination,Card,FloatButton,Spin,Breadcrumb,Radio,Select } from 'antd';
 import LayoutLoading from "./components/LayoutLoading"
 import LayoutError from "./components/LayoutError"
@@ -89,8 +89,14 @@ const MeliTest =()=>{
 	
 	return(
 		<Layout style={{ width: "100%",display: 'flex',alignItems: 'center', minHeight: "100vh"}}>
+			<Flex style={{ background: "white",width: "100%",padding: "1rem 2rem ",justifyContent: "space-between" }}>
+				<Link href="/" style={{ fontSize: '2rem',color: '#08c' }}>
+					<ArrowLeftOutlined />
+				</Link>
+				<Title style={{ margin: "0" }}>Market<span style={{ margin: "0",fontWeight: "bold",color: '#08c' }}>Finder</span></Title>
+			</Flex>
 
-			<Layout style={{ width: "70%",display: 'flex', marginTop: "4rem"}}>
+			<Layout style={{ width: "80%",display: 'flex', marginTop: "4rem"}}>
 				<Flex style={{ width: "100%", marginBottom: "1rem"}}>
 					<Search
 						placeholder="Enter a product to search..."

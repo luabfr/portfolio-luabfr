@@ -4,15 +4,25 @@ import Layout from "antd/es/layout"
 import { Space, Typography, Button, Flex, Input, Image, Pagination, Card, FloatButton, Spin, Breadcrumb, Radio, Select } from 'antd';
 const { Text, Title } = Typography
 
+const myProfession= ['Frontend Engineer', 'UX/UI Designer', 'Software Developer', 'Multimedia Artist']
+
+
 export default function Home() {
   return (
     <Layout style={{minHeight:"100vh", justifyContent:"center", alignItems:"center"}}>
       <Layout style={{width: "1200px", background:"white", padding: "4rem"}}>
-        <Flex vertical>
-          <Title>
+
+        {/* HERO SECTION */}
+        <Flex vertical style={{ width: "100%", height:"80vh" }}>
+
+          <Title level={1}>
             luabfr@Portfolio
           </Title>
-
+          <Title level={2}>
+            Hi, my name is Luciano.<br/>
+            I'm a {myProfession[0]}.<br />
+            And this is my Porfolio.<br />
+          </Title>
           <Flex>
             <Link href="/meli-test">Meli Test</Link>
           </Flex>

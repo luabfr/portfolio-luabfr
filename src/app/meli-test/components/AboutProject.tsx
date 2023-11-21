@@ -6,9 +6,10 @@ import Link from "next/link";
 const { Text , Title } = Typography;
 
 
+
 const AboutProject = () => {
 
-	const [openDrawer,setOpenDrawer] = useState(false);
+	const [openDrawer,setOpenDrawer] = useState<boolean>(false);
 
 	// Drawer
 	const showDrawer = () => {
@@ -29,13 +30,13 @@ const AboutProject = () => {
 				description="About Project" 
 				/>
 			<Drawer title="About project" placement="right" onClose={onCloseDrawer} open={openDrawer}>
-				<Title>MELI Search</Title>
-				<Text>Este proyecto está hecho en base a la siguiente prueba técnica MELI: 
+				<Title >MarketFinder</Title>
+				<Text>{"This project is based on a MercadoLibre Frontend Test: "}
 					<Link href="/MELI_FrontEnd_Test_Practico.pdf" target="_blank">
-						Ver PDF
+						See PDF (spanish)
 					</Link>
 				</Text> <br />
-				<Text>El proyecto consiste en conectarse a un API de MELI y que devuelve una lista de productos buscados por el usuario.</Text>
+				<Text>MarketFinder connects to the MercadoLibre API to search for any type of product in the marketplace and then, can show a product selected details page.</Text>
 				
 			</Drawer>
 		</>
