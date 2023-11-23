@@ -1,5 +1,5 @@
 import { useState,useEffect } from 'react';
-import { ItemData, CategoryName } from "../components/interfaces"
+import { ItemData, CategoryName } from "../interfaces/useApiMeLiItemById.interfaces"
 
 
 

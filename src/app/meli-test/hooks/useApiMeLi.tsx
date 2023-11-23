@@ -1,16 +1,11 @@
 import { useState,useEffect } from 'react';
+import { ResultResults, CategoryName, SingleProduct } from '../interfaces/useApiMeLi.interfaces';
 
-interface ResultResults {
-	results: [{ category_id: string; }];
-}
 
-interface CategoryName {
-	path_from_root: [{ name: string; id: string }];
 
-}
 
 const useApiMeLi = ( productSearched: string ) => {
-	const [data,setData] = useState< unknown | null>(null);
+	const [data, setData] = useState<SingleProduct[] | null>(null);
 	const [breadcrumbState, setBreadcrumb] = useState<{ title: string; }[]>([]);
 	const [loading, setLoading] = useState<boolean>(true);
 	const [error, setError] = useState<any | null>(null);
@@ -25,7 +20,8 @@ const useApiMeLi = ( productSearched: string ) => {
 					throw new Error('Could not get data');
 				}
 				const result: ResultResults = await response.json();				
-				const arrayOfResults = result.results;
+				const arrayOfResults: SingleProduct[] = result.results;
+
 
 				// funcion para obtener la categoria que mas aparece
 				const counter: { [key: string]: number } = {};
