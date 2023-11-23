@@ -20,7 +20,7 @@ export default function Home() {
           </Title>
           <Title level={2}>
             Hi, my name is Luciano.<br/>
-            I'm a {myProfession[0]}.<br />
+            I am a {myProfession[0]}.<br />
             And this is my Porfolio.<br />
           </Title>
           <Flex>
