@@ -1,16 +1,10 @@
 import { useState,useEffect } from 'react';
+import { ItemData, CategoryName } from "../components/interfaces"
 
-interface Result {
-	category_id: string;
-}
-
-interface CategoryName{
-	path_from_root: [{ name: string ; id: string}];
-}
 
 
 const useApiMeLiItemById = ( itemById: string ) => {
-	const [itemData, setItemData] = useState< any | null>(null)
+	const [itemData, setItemData] = useState< ItemData | null>(null)
 	const [loading,setLoading] = useState<boolean>(true);
 	const [error, setError] = useState<any | null>(null);
 	const [breadcrumbState, setBreadcrumb] = useState<{ title: string; }[]>([]);
@@ -26,7 +20,11 @@ const useApiMeLiItemById = ( itemById: string ) => {
 				if (!response.ok) {
 					throw new Error('No se pudo obtener los datos');
 				}
-				const result: Result = await response.json();
+				const result: ItemData = await response.json();
+
+
+				console.log('result', result)
+
 
 				const response2 = await fetch(`https://api.mercadolibre.com/categories/${result.category_id}`);
 				const categoryName: CategoryName = await response2.json();
