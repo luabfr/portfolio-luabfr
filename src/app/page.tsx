@@ -1,14 +1,10 @@
 "use client"
 import { useState, useEffect } from 'react';
-import Link from 'next/link'
-import Layout from "antd/es/layout"
-import { Space, Typography, Button, Flex, Input, Image, Pagination, Card, FloatButton, Spin, Breadcrumb, Radio, Select } from 'antd';
 import { motion } from "framer-motion"
 import HeroTitle from './components/HeroTitle/HeroTitle';
+import MenuOpen from './components/MenuOpen/MenuOpen';
 import { MainX, SectionX, ToPortfolio, ToBurgerMenu } from './components/page.styled';
-
 import Preloader from './components/Preloader/Preloader';
-const { Text, Title } = Typography
 
 
 
@@ -38,20 +34,14 @@ export default function Home() {
         </div>
         
       ) : (
+        <MenuOpen/>
+        // <SectionX >
 
-        <SectionX >
+        //   <ToBurgerMenu />
 
-          {/* HERO SECTION */}
-          <Flex vertical style={{ width: "100%", height: "80vh" }}>
-            {/* <motion.div animate={{ x: 100 }}> */}
-            <HeroTitle />
-            {/* </motion.div> */}         
+        //   <ToPortfolio/>
 
-          </Flex>
-
-          <ToBurgerMenu/>
-          <ToPortfolio/>
-        </SectionX>
+        // </SectionX>
       )}
     </MainX>
   )

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import arrowPortfolioSVG from "../../../../public/arrow-main.svg";
-
 import burgerMenuSVG from "../../../../public/burger-menu.svg";
+import closeSVG from "../../../../public/close.svg";
 
 
 export const IconArrowPortfolio =()=>{
@@ -19,7 +19,17 @@ export const IconBurgerMenu = () => {
 		<Image
 			priority
 			src={burgerMenuSVG}
-			alt="See Portfolio"
+			alt="See Menu"
+		/>
+	)
+}
+
+export const IconClose = () => {
+	return (
+		<Image
+			priority
+			src={closeSVG}
+			alt="Close"
 		/>
 	)
 }

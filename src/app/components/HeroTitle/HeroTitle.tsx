@@ -6,7 +6,7 @@ import styleSystem from "../styleSystem";
 
 const Wrapper = styled.section`
   padding: 4em;
-	margin-top: 12rem;
+	height: 100vh;
 `;
 
 

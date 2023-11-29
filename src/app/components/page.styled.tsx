@@ -23,8 +23,8 @@ export const SectionX = styled.section`
 `
 const ToPortfolioWrapper = styled.div`
 	position: absolute;
-	bottom:2rem;
-	right: 2rem;
+	bottom:4rem;
+	right: 4rem;
 `;
 
 export const ToPortfolio =()=>{
@@ -39,8 +39,8 @@ export const ToPortfolio =()=>{
 
 const BurgerMenuWrapper = styled.div`
 	position: absolute;
-	top:2rem;
-	right: 2rem;
+	top:4rem;
+	right: 4rem;
 `;
 
 export const ToBurgerMenu = () => {
