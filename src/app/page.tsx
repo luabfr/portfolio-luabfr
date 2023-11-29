@@ -1,92 +1,59 @@
 "use client"
+import { useState, useEffect } from 'react';
 import Link from 'next/link'
 import Layout from "antd/es/layout"
 import { Space, Typography, Button, Flex, Input, Image, Pagination, Card, FloatButton, Spin, Breadcrumb, Radio, Select } from 'antd';
+import { motion } from "framer-motion"
+import HeroTitle from './components/HeroTitle/HeroTitle';
+import { MainX, SectionX, ToPortfolio, ToBurgerMenu } from './components/page.styled';
+
+import Preloader from './components/Preloader/Preloader';
 const { Text, Title } = Typography
 
-const myProfession= ['Frontend Engineer', 'UX/UI Designer', 'Software Developer', 'Multimedia Artist']
+
+
+const myProfession= ['Frontend Developer', 'UX/UI Designer', 'Multimedia Craftsman']
+  
+
 
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (loading != false){
+      setLoading(false);
+    }
+    
+  }, []);
+
+
+
   return (
-    <Layout style={{minHeight:"100vh", justifyContent:"center", alignItems:"center"}}>
-      <Layout style={{width: "1200px", background:"white", padding: "4rem"}}>
+    <MainX >
+      {loading ? (
+        // Aquí puedes agregar tu componente preloader
+        <div style={{ background:"#192231", width:"100vw", height:"100vh", padding: "0", margin:"0", justifyContent:"center", alignItems:"center", display:"flex"}}>
+          <h1 style={{ margin: "0", padding: "0", color:"#EDDBCD"}}>loading...</h1>
+        </div>
+        
+      ) : (
 
-        {/* HERO SECTION */}
-        <Flex vertical style={{ width: "100%", height:"80vh" }}>
+        <SectionX >
 
-          <Title level={1}>
-            luabfr@Portfolio
-          </Title>
-          <Title level={2}>
-            Hi, my name is Luciano.<br/>
-            I am a {myProfession[0]}.<br />
-            And this is my Porfolio.<br />
-          </Title>
-          <Flex>
-            <Link href="/meli-test">Meli Test</Link>
+          {/* HERO SECTION */}
+          <Flex vertical style={{ width: "100%", height: "80vh" }}>
+            {/* <motion.div animate={{ x: 100 }}> */}
+            <HeroTitle />
+            {/* </motion.div> */}         
+
           </Flex>
 
-        </Flex>
-
-
-
-
-
-
-
-
-        {/*  LINKS NEXT  */}
-        {/*  LINKS NEXT  */}
-        {/*  LINKS NEXT  */}
-        <Flex >
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Title level={5}>
-              Docs <span>-&gt;</span>
-            </Title >
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Title level={5}>
-              Learn <span>-&gt;</span>
-            </Title>
-            <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Title level={5}>
-              Templates <span>-&gt;</span>
-            </Title>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Title level={5}>
-              Deploy <span>-&gt;</span>
-            </Title>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL with Vercel.
-            </p>
-          </a>
-        </Flex>
-      </Layout>
-    </Layout>
+          <ToBurgerMenu/>
+          <ToPortfolio/>
+        </SectionX>
+      )}
+    </MainX>
   )
+  
 }
