@@ -1,7 +1,34 @@
 import React, { useState, useRef } from 'react';
-import { PortfolioUIX, H1X, MenuHR, SliderWrapper, StyledCarousel, SliderItem } from "./PortfolioScreen.styled";
-import { ConfigProvider, Button } from "antd";
+import { ConfigProvider, Popover } from "antd";
 import { CarouselRef } from 'antd/es/carousel';
+import { IconLeftArrowComplete, IconRightArrowComplete } from '../Icons/Icons';
+import {
+	PortfolioUIX,
+	H1X,
+	MenuHR,
+	SliderWrapper,
+	StyledCarousel,
+	SliderItem,
+	StyledButtonL,
+	StyledButtonR,
+	WrapperThumbnailProject,
+	ThumbnailProject,
+	SliderItemTitle,
+	SliderItemContent,
+	SliderItemFooter,
+	SliderItemFooterTags,
+	SliderItemFooterTryIt,
+	WrapperThumbnailProjectH1,
+} from "./PortfolioScreen.styled";
+import Image from "next/image";
+
+const PopoverProject1= (
+	<div>
+		<p>Project based on a Technical Test of MercadoLibre</p>
+		<p>The app connects with de APIs, and can find products an deploy it in a Detail View.</p>
+	</div>
+);
+
 
 const PortfolioScreen = () => {
 	const carouselRef = React.useRef<CarouselRef>(null);
@@ -27,7 +54,7 @@ const PortfolioScreen = () => {
 
 	return (
 		<PortfolioUIX>
-			<H1X>Portfolio</H1X>
+			<H1X>PORTFOLIO</H1X>
 			<MenuHR />
 			<SliderWrapper>
 				<ConfigProvider
@@ -42,25 +69,117 @@ const PortfolioScreen = () => {
 					}}
 				>
 					<StyledCarousel ref={carouselRef}>
+
+						{/* Slide 1 */}
 						<SliderItem>
-							<h3 style={{ fontSize: "6rem" }}>1</h3>
+							<SliderItemTitle
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								transition={{delay: .5}}>
+								{"MarketFinder"}
+							</SliderItemTitle>
+							<SliderItemContent>
+								<Image 
+									src="/MarketFinder.png"
+									alt="Project: MarketFinder"
+									layout="fill"
+								/>
+							</SliderItemContent>
+
+							<SliderItemFooter	>
+								<SliderItemFooterTags>
+
+								</SliderItemFooterTags>
+								<SliderItemFooterTryIt
+								initial={{opacity:0}}
+								whileInView={{opacity:1}}>
+									Try it
+								</SliderItemFooterTryIt>
+							</SliderItemFooter>
+
 						</SliderItem>
+
+						{/* Slide 2 */}
+						<SliderItem>
+							<SliderItemTitle>
+								{"MarketFinder"}
+							</SliderItemTitle>
+							<SliderItemContent>
+								{"sadkasd ahskdas das djas djasdgja shda aa"}
+							</SliderItemContent>
+
+							<SliderItemFooter>
+								<SliderItemFooterTags>
+
+								</SliderItemFooterTags>
+								<SliderItemFooterTryIt>	
+									Try it
+								</SliderItemFooterTryIt>
+							</SliderItemFooter>
+
+						</SliderItem>
+
 						<SliderItem>
 							<h3 style={{ fontSize: "6rem" }}>2</h3>
 						</SliderItem>
+
 						<SliderItem>
 							<h3 style={{ fontSize: "6rem" }}>3</h3>
 						</SliderItem>
-						<SliderItem>
-							<h3 style={{ fontSize: "6rem" }}>4</h3>
-						</SliderItem>
+
 					</StyledCarousel>
 				</ConfigProvider>
 
-				<Button onClick={()=>handleGoToSlide(1)  }>Go to Slide 3</Button>
-				<Button onClick={handlePrevSlide}>Prev</Button>
-				<Button onClick={handleNextSlide}>Next</Button>
+
+				{/* Slider UI - prev/next Arrows */}
+				<StyledButtonL onClick={handlePrevSlide}>
+					<IconLeftArrowComplete/>
+				</StyledButtonL>
+
+				<StyledButtonR onClick={handleNextSlide}>
+					<IconRightArrowComplete />
+				</StyledButtonR>
+
+
 			</SliderWrapper>
+
+
+
+			{/* Project Thumbnails  */}
+			<WrapperThumbnailProject>
+
+				<WrapperThumbnailProjectH1>
+					{"Projects"}
+				</WrapperThumbnailProjectH1>
+
+				{/* Project 1 */}				
+				<ThumbnailProject onClick={() => handleGoToSlide(0)}>				
+					<Image
+						src="/MarketFinder.png"
+						alt="Project: MarketFinder"
+						width={200}
+						height={100}
+					/>
+				</ThumbnailProject>
+
+				{/* Project 2 */}	
+				<ThumbnailProject onClick={() => handleGoToSlide(1)}>
+					{"project 2"}
+				</ThumbnailProject>
+
+				{/* Project 2 */}
+				<ThumbnailProject onClick={() => handleGoToSlide(2)}>
+					{"project 3"}
+				</ThumbnailProject>
+
+				{/* Project 2 */}
+				<ThumbnailProject onClick={() => handleGoToSlide(3)}>
+					{"project 4"}
+				</ThumbnailProject>
+
+			</WrapperThumbnailProject>
+
+
 		</PortfolioUIX>
 	)
 }

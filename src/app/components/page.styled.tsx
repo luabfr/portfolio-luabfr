@@ -20,12 +20,13 @@ export const SectionX = styled.section`
 	width: 80vw;	
 	height: 100vh;
 	position: relative;
-	overflow-y: hidden;
+	/* overflow-y: hidden; */
 `
 const ToPortfolioWrapper = styled.div`
 	position: absolute;
 	bottom:4rem;
 	right: 4rem;
+	z-index: 999;
 `;
 
 export const ToPortfolio =()=>{

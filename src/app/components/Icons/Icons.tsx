@@ -2,6 +2,8 @@ import Image from "next/image";
 import arrowPortfolioSVG from "../../../../public/arrow-main_complete.svg";
 import burgerMenuSVG from "../../../../public/burger-menu.svg";
 import closeSVG from "../../../../public/close.svg";
+import LeftArrowCompleteSVG from "../../../../public/left-arrow-complete.svg";
+import RightArrowCompleteSVG from "../../../../public/right-arrow-complete.svg";
 
 
 
@@ -31,6 +33,26 @@ export const IconClose = () => {
 			priority
 			src={closeSVG}
 			alt="Close"
+		/>
+	)
+}
+
+export const IconLeftArrowComplete = () => {
+	return (
+		<Image
+			priority
+			src={LeftArrowCompleteSVG}
+			alt="Prev"
+		/>
+	)
+}
+
+export const IconRightArrowComplete = () => {
+	return (
+		<Image
+			priority
+			src={RightArrowCompleteSVG}
+			alt="RightArrowCompleteSVG"
 		/>
 	)
 }

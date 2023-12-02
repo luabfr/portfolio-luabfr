@@ -45,14 +45,14 @@ export const BurguerUIWrapper = styled(motion.div)`
 
 
 const closeStick1 = {
-	rotate: ["0deg", "0deg", "45deg", "45deg"],
+	rotate: ["0deg", "0deg", "40deg", "40deg"],
 	y: ["60px", "20px", "0px", "0px"],
 	width: "160px"
 	
 }
 
 const burguerStick1 = {
-	rotate: ["45deg", "45deg", "0deg", "0deg"],
+	rotate: ["40deg", "40deg", "0deg", "0deg"],
 	y: ["0px", "0px", "20px", "60px"],
 	width: "140px"
 	
@@ -60,40 +60,40 @@ const burguerStick1 = {
 
 
 const closeStick2={
-	rotate: ["0deg", "0deg", "-45deg", "-45deg"],
+	rotate: ["0deg", "0deg", "-40deg", "-40deg"],
 	y: ["20px", "20px", "0px", "0px"],
 	width: "160px"
 	
 }
 
 const burguerStick2 = {
-	rotate: ["-45deg", "-45deg", "0deg", "0deg"],
+	rotate: ["-40deg", "-40deg", "0deg", "0deg"],
 	y: ["0px", "0px", "20px", "20px"],
 	width: "140px"
 	
 }
 
 const closeStick3 = {
-	rotate: ["0deg", "0deg", "45deg", "45deg"],
+	rotate: ["0deg", "0deg", "40deg", "40deg"],
 	y: ["-60px", "-20px", "0px", "0px"],
 	width: "160px"
 }
 
 const burguerStick3 = {
-	rotate: ["45deg", "45deg", "0deg", "0deg"],
+	rotate: ["40deg", "40deg", "0deg", "0deg"],
 	y: ["0px", "0px", "-20px", "-60px"],
 	width: "140px"
 }
 
 
 const closeStick4 = {
-	rotate: ["0deg", "0deg", "-45deg", "-45deg"],
+	rotate: ["0deg", "0deg", "-40deg", "-40deg"],
 	y: ["-20px", "-20px", "0px", "0px"],
 	width: "160px"
 }
 
 const burguerStick4 = {
-	rotate: ["-45deg", "-45deg", "0deg", "0deg"],
+	rotate: ["-40deg", "-40deg", "0deg", "0deg"],
 	y: ["0px", "0px", "-20px", "-20px"],
 	width: "140px"
 	
@@ -117,25 +117,25 @@ export const BurguerUI = ({ })=>{
 			<UiRect
 				initial={burguerStick1}
 				animate={isOpen ? closeStick1 : burguerStick1}
-				transition={{ times: [0, 0.4, 0.6, 1] }}
+				transition={{ times: [0, 0.4, 0.6, 1], duration: 1 }}
 			/>
 
 			<UiRect
 				initial={burguerStick2}
 				animate={isOpen ? closeStick2 : burguerStick2 }
-				transition={{ times: [0, 0.4, 0.6, 1] }}
+				transition={{ times: [0, 0.4, 0.6, 1], duration: 1 }}
 			/>
 
 			<UiRect
 				initial={burguerStick3}
-				animate={isOpen ? closeStick4 : burguerStick3}
-				transition={{ times: [0, 0.4, 0.6, 1] }}
+				animate={isOpen ? closeStick3 : burguerStick3}
+				transition={{ times: [0, 0.4, 0.6, 1], duration: 1 }}
 			/>
 
 			<UiRect
 				initial={burguerStick4}
 				animate={isOpen ? closeStick4 : burguerStick4}
-				transition={{ times: [0, 0.4, 0.6, 1] }}
+				transition={{ times: [0, 0.4, 0.6, 1], duration: 1 }}
 			/>
 
 		</UiRectWrapper>
