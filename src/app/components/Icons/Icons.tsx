@@ -1,7 +1,8 @@
 import Image from "next/image";
-import arrowPortfolioSVG from "../../../../public/arrow-main.svg";
+import arrowPortfolioSVG from "../../../../public/arrow-main_complete.svg";
 import burgerMenuSVG from "../../../../public/burger-menu.svg";
 import closeSVG from "../../../../public/close.svg";
+
 
 
 export const IconArrowPortfolio =()=>{

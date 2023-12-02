@@ -17,9 +17,10 @@ export const MainX = styled.main`
 
 export const SectionX = styled.section`
 	background: ${styleSystem.dark};
-	width: 1200px;	
+	width: 80vw;	
 	height: 100vh;
 	position: relative;
+	overflow-y: hidden;
 `
 const ToPortfolioWrapper = styled.div`
 	position: absolute;

@@ -1,20 +1,20 @@
 "use client"
 import { useState, useEffect } from 'react';
 import { motion } from "framer-motion"
-import HeroTitle from './components/HeroTitle/HeroTitle';
+import HomeScreen from './components/HomeScreen/HomeScreen';
 import MenuOpen from './components/MenuOpen/MenuOpen';
 import { MainX, SectionX, ToPortfolio, ToBurgerMenu } from './components/page.styled';
 import Preloader from './components/Preloader/Preloader';
-
-
-
-const myProfession= ['Frontend Developer', 'UX/UI Designer', 'Multimedia Craftsman']
-  
-
+import { IconCloseFM } from './components/UI/UI';
+import { IconClose } from './components/Icons/Icons';
+import { BurguerUI, BurguerUIWrapper } from './components/UI/UI';
+import PortfolioScreen from './components/PortfolioScreen/PortfolioScreen';
 
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [isMenuOpen, setMenuOpen] = useState(false)
+
 
   useEffect(() => {
     if (loading != false){
@@ -28,20 +28,28 @@ export default function Home() {
   return (
     <MainX >
       {loading ? (
-        // Aquí puedes agregar tu componente preloader
-        <div style={{ background:"#192231", width:"100vw", height:"100vh", padding: "0", margin:"0", justifyContent:"center", alignItems:"center", display:"flex"}}>
-          <h1 style={{ margin: "0", padding: "0", color:"#EDDBCD"}}>loading...</h1>
-        </div>
-        
+        <Preloader/>
       ) : (
-        <MenuOpen/>
-        // <SectionX >
+        
+        <>
+          <MenuOpen isOpen={!isMenuOpen} />
+          <SectionX >
 
-        //   <ToBurgerMenu />
+            {/* Burguer */}
+            <BurguerUIWrapper onClick={() => setMenuOpen(!isMenuOpen)}>
+              <BurguerUI  />
+            </BurguerUIWrapper>
 
-        //   <ToPortfolio/>
+            {/* Link to Portfolio */}
+            <ToPortfolio />
 
-        // </SectionX>
+
+
+            {/* <HomeScreen /> */}
+            <PortfolioScreen/>
+            
+          </SectionX>
+        </>
       )}
     </MainX>
   )

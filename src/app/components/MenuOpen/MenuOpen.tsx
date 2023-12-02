@@ -1,72 +1,85 @@
 "use client"
+import { FC } from 'react';
 import styled, { css } from "styled-components"
 import styleSystem from "../styleSystem";
 import { IconClose } from "../Icons/Icons";
-
-const MenuOpenX = styled.div`
-	width: 100vw;
-	height: 100vh;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: ${styleSystem.light};
-`;
-
-const MenuOpenSection = styled.div`
-	position: relative;
-	margin-left: 10vw;
-	width: 80vw;
-	height: auto;
-
-`;
-
-const IconCloseWrapper = styled.div`
-	position: absolute;
-	top: 2rem;
-	right: 2rem;
-`;
-
-const MenuUl = styled.div`
-
-`
-
-const MenuLI = styled.div`
-font-family:${styleSystem.font1}; ;
-	color: ${styleSystem.semiDark};
-	font-size: 10rem;
-	line-height: 2;
-`
-
-const MenuHR = styled.div`
-	background: ${styleSystem.primaryCol};
-	height: 4px;
-	width: 10rem;
-`
+import { useAnimate, stagger, motion } from "framer-motion";
+import { MenuUl, MenuLI, MenuHR, MenuBG } from "./MenuOpen.styled";
 
 
 
-const MenuOpen = () =>{
+interface MenuOpenProps {
+	isOpen: boolean;
+}
+
+
+const initialStatesLI ={
+	opacity: 0, 
+	x: "0", 
+	marginTop: "-5rem"
+}
+
+const inViewStatesLI = {
+	opacity: 1, 
+	x: "0" ,
+	marginTop: "0rem"
+}
+
+const MenuOpen: FC<MenuOpenProps> = ({ isOpen }) => {
+
+	const [scope, animate] = useAnimate();
 
 	return(
-		<MenuOpenX>
-			<MenuOpenSection>
-				<IconCloseWrapper>
-					<IconClose />
-				</IconCloseWrapper>
 
-				<MenuUl>
-					<MenuLI>Home</MenuLI>
-					<MenuHR/>
-					<MenuLI>Portfolio</MenuLI>
-					<MenuHR />
-					<MenuLI>About me</MenuLI>
-					<MenuHR />
-					<MenuLI>Contact</MenuLI>
-				</MenuUl>
+		<MenuBG animate={{ top: isOpen ? "-200vh" : "0" }}>
+			<MenuUl>
+				<MenuLI 
+					initial={initialStatesLI}
+					transition={{ delay: isOpen? 0 : 0.2 }}
+					whileInView={inViewStatesLI}>
+					Home
+				</MenuLI>
+				<MenuHR
+					initial={{ opacity: 0, x: "5rem" }}
+					transition={{ delay: isOpen ? 0 : 0.2 }}
+					whileInView={{ opacity: 1, x: "0" }}				
+				/>
+
+				<MenuLI
+					initial={initialStatesLI}
+					transition={{ delay: isOpen ? 0 : 0.4 }}
+					whileInView={inViewStatesLI}>
+					Portfolio
+				</MenuLI>
+				<MenuHR 
+					initial={{ opacity: 0, x: "5rem" }}
+					transition={{ delay: isOpen ? 0 : 0.4 }}
+					whileInView={{ opacity: 1, x: "0" }} />
 
 
-			</MenuOpenSection>
-		</MenuOpenX>
+				<MenuLI
+					initial={initialStatesLI}
+					transition={{ delay: isOpen ? 0 : 0.6 }}
+					whileInView={inViewStatesLI}>
+					About me
+				</MenuLI>
+				<MenuHR 
+					initial={{ opacity: 0, x: "5rem" }}
+					transition={{ delay: isOpen ? 0 : 0.6 }}
+					whileInView={{ opacity: 1, x: "0" }} />
+
+
+				<MenuLI
+					initial={initialStatesLI}
+					transition={{ delay: isOpen ? 0 : 0.8 }}
+					whileInView={inViewStatesLI}>
+					Contact
+				</MenuLI>
+
+
+			</MenuUl>
+		</MenuBG>
+
 	)
 }
 

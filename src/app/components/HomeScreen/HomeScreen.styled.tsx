@@ -1,16 +1,21 @@
-"use client"
 import styled , {css} from "styled-components"
 import styleSystem from "../styleSystem";
 
 
 
-const Wrapper = styled.section`
+export const HeroTitleWrap = styled.section`
   padding: 4em;
 	height: 100vh;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
 `;
 
+export const HeroTextWrap = styled.section`
 
-const STH1 = styled.h1`
+`;
+
+export const STH1 = styled.h1`
   font-size: 10em;
 	font-family: ${styleSystem.font1};
 	font-weight: 300;
@@ -19,7 +24,7 @@ const STH1 = styled.h1`
 	line-height: 1;
 `;
 
-const STH2 = styled.h2`
+export const STH2 = styled.h2`
   font-size: 5em;
 	font-family: ${styleSystem.font1};
 	font-weight: 300;
@@ -28,29 +33,9 @@ const STH2 = styled.h2`
 	
 `;
 
-const CustomHR = styled.div`
+export const CustomHR = styled.div`
 	height: 4px;
 	background: ${styleSystem.semiDark};
 	width: 12rem;
 	margin: 2rem 0;
 `
-
-
-const HeroTitle =()=>{
-
-	return(
-		<Wrapper>
-			<STH2>
-				I am Luciano
-			</STH2>
-			<CustomHR />
-			<STH1 >
-				Frontend <br/> Developer
-			</STH1>
-		</Wrapper>
-	)
-}
-
-
-
-export default HeroTitle
