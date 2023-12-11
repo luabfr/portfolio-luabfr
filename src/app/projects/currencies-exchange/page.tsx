@@ -5,7 +5,6 @@ import { StyledApp, Container } from './Components/CustomStyledComponents/Custom
 import ButtonsActions from './Components/ButtonsActions';
 import SetupStates from './Components/SetupStates';
 import CurrencyList from './Components/CurrencyList/CurrencyList';
-import ReduxToolkitTest from '@/app/components/ReduxToolkitTest/ReduxToolkitTest';
 import store from '@/app/store/store';
 import { Button } from './Components/CustomStyledComponents/CustomStyledComponents';
 
@@ -21,7 +20,6 @@ const App: FC = ()=> {
       <StyledApp>
         <Container>
 
-          {/* <ReduxToolkitTest/> */}
 
           <ButtonsActions />
 
