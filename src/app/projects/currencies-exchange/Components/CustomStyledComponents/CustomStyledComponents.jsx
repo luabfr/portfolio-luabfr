@@ -1,5 +1,6 @@
+"use client"
 import React from 'react';
-import styled , {css} from 'styled-components';
+import styled,{ css, keyframes  } from 'styled-components';
 import Select from 'react-select'
 
 // @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -22,10 +23,14 @@ export const StyledApp = styled.main`
 	min-height: 100vh;
 	padding: 1.5rem;
 	padding-top: 5rem;	
+	font-family: sans-serif;
 `;
 
 export const Container = styled.section`
+  box-sizing: border-box;
 	background: white;
+	min-width: 400px;
+	min-height: 590px;
 	border-radius: .5rem;
 	box-shadow:  ${shadow0};
 	padding: 1.5rem;
@@ -75,7 +80,7 @@ export const Button = styled.button`
 export const StyledSelect = styled( Select )`
 	box-shadow: ${shadow1};
 	border-radius: .5rem;
-	height: 3rem;
+	height: 2.4rem;
 	
 `
 
@@ -97,9 +102,23 @@ export const H1 = styled.h1`
 export const UlCurrency = styled.ul`
 	margin-top: 3rem;
 	padding: 0;
+	min-height: 12rem;
 `
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+
 export const LiCurrecy = styled.li`
+	opacity: 0;
+  animation: ${fadeIn} 1s ease-in-out forwards;
+
 	list-style: none;
 
 	display: flex;	

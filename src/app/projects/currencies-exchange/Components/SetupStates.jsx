@@ -1,14 +1,18 @@
-// import React from 'react'
-import { connect } from 'react-redux';
-import { getSymbolsFromAPI } from './store/test/actions';
+"use client"
+import { useDispatch } from 'react-redux';
+import { getSymbolsFromAPI } from '@/app/store/reducers';
+import { useEffect } from 'react';
 
+const SetupStates = () => {
+	const dispatch = useDispatch();
 
-const SetupStates = ({ getSymbolsFromAPI }) => {
-	const symbolsList = { currenciesList: "" } // Si la peticion se envia vacia, devuelve la totalidad de monedas.
-	getSymbolsFromAPI(symbolsList)
+	useEffect(() => {
+		const symbolsList = { currenciesList: '' };
+		dispatch(getSymbolsFromAPI(symbolsList));
+		console.log('Setup States: ok');
+	},[dispatch]);
 
-	console.log("Setup States: ok")
-	return null
-}
+	return null;
+};
 
-export default connect(null,{ getSymbolsFromAPI })(SetupStates)
+export default SetupStates;
