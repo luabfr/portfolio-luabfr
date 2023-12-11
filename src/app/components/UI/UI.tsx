@@ -4,6 +4,12 @@ import { motion } from 'framer-motion';
 import { useState } from "react";
 import { UiRectWrapper, UiRect , stick1, stick2, stick3, stick4 } from "./UI.styled";
 
+export const BurguerUIWrapper = styled(motion.div)`
+	position: absolute;
+	z-index: 1000;
+	right: 4rem;
+	top: 4rem;
+`;
 
 export const BurguerUI = ({ })=>{
 	

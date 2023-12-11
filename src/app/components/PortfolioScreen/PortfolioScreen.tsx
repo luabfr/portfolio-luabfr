@@ -21,13 +21,10 @@ import {
 	WrapperThumbnailProjectH1,
 } from "./PortfolioScreen.styled";
 import Image from "next/image";
+import ReduxToolkitTest from '../ReduxToolkitTest/ReduxToolkitTest';
+import Link from 'next/link';
 
-const PopoverProject1= (
-	<div>
-		<p>Project based on a Technical Test of MercadoLibre</p>
-		<p>The app connects with de APIs, and can find products an deploy it in a Detail View.</p>
-	</div>
-);
+
 
 
 const PortfolioScreen = () => {
@@ -52,9 +49,19 @@ const PortfolioScreen = () => {
 		}
 	};
 
+
+	
+
+
 	return (
 		<PortfolioUIX>
 			<H1X>PORTFOLIO</H1X>
+			<ReduxToolkitTest/>
+			<Link href="/projects/market-finder">market-finder</Link>
+			<br />
+			<Link href="/projects/currencies-exchange">currencies-exchange</Link>
+
+
 			<MenuHR />
 			<SliderWrapper>
 				<ConfigProvider
