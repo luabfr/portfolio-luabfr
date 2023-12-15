@@ -3,26 +3,40 @@ import { useState, useEffect } from 'react';
 import { motion } from "framer-motion"
 import HomeScreen from './components/HomeScreen/HomeScreen';
 import MenuOpen from './components/MenuOpen/MenuOpen';
-import { MainX, SectionX, ToPortfolio, ToBurgerMenu } from './components/page.styled';
+import { MainX, SectionX } from './components/page.styled';
+import { ToPortfolio } from './components/UI/ToPortfolio';
 import Preloader from './components/Preloader/Preloader';
 import { IconClose } from './components/Icons/Icons';
-import { BurguerUI, BurguerUIWrapper } from './components/UI/UI';
+import { BurguerUI } from './components/UI/BurguerMenu';
+import { BurguerUIWrapper } from './components/UI/BurguerMenu.styled';
 import PortfolioScreen from './components/PortfolioScreen/PortfolioScreen';
+import PortfolioScreenV2 from './components/PortfolioScreen/PortfolioScreenV2';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import TextReplacer from './components/TextReplacer/TextReplacer';
+
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [isMenuOpen, setMenuOpen] = useState(false)
+  const [isViewingPortfolio, setIsViewingPortfolio] = useState(false)
 
 
   useEffect(() => {
     if (loading != false){
       setLoading(false);
-    }
-    
+    }    
   }, []);
 
+
+
+  const handleBurguerMenu = () => {
+    setMenuOpen(!isMenuOpen)
+  };
+
+  const handleToPortfolio = () => {
+    setIsViewingPortfolio(true)
+  };
 
 
   return (
@@ -37,17 +51,23 @@ export default function Home() {
             <SectionX >
 
               {/* Burguer */}
-              <BurguerUIWrapper onClick={() => setMenuOpen(!isMenuOpen)}>
-                <BurguerUI  />
-              </BurguerUIWrapper>
-
-              {/* Link to Portfolio */}
-              <ToPortfolio />
+              <BurguerUI onClick={handleBurguerMenu} isOpen={isMenuOpen} />
+              
 
 
+              {!isViewingPortfolio && 
+                <>
+                  <HomeScreen />
+                  <ToPortfolio onClick={handleToPortfolio} />
+                </>
+              }
+              {isViewingPortfolio && 
+                <PortfolioScreenV2/>
+              }
 
-              {/* <HomeScreen /> */}
-              <PortfolioScreen/>
+
+              {/* Version de alto impacto, con carrusel */}
+              {/* <PortfolioScreen/> */}
               
             </SectionX>
           </>

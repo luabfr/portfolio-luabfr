@@ -17,19 +17,23 @@ export const MenuBG = styled(motion.div)`
 `
 
 export const MenuUl = styled(motion.div)`
-		width: 80vw;
-`
+	width: 80vw;
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 
 export const MenuLI = styled(motion.div)`
 	font-family:${styleSystem.font1}; ;
 	color: ${styleSystem.semiDark};
-	font-size: 10rem;
+	font-size: 4rem;
 	line-height: 2;
-`
+	cursor: pointer;
+`;
 
 export const MenuHR = styled(motion.div)`
 	background: ${styleSystem.primaryCol};
 	height: 4px;
 	width: 10rem;
-`
+`;
