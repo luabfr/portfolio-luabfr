@@ -2,6 +2,16 @@ import styled, { css } from "styled-components"
 import styleSystem from "../styleSystem";
 import { motion } from 'framer-motion';
 
+
+
+export const BurguerUIWrapper = styled(motion.div)`
+	position: absolute;
+	z-index: 1000;
+	right: 11vw;
+	top: 1rem;
+`;
+
+
 export const IconCloseFM = styled(motion.div)`
 	position: absolute;
 	top: 4rem;
@@ -15,80 +25,76 @@ export const IconCloseFM = styled(motion.div)`
 
 
 export const UiRectWrapper = styled(motion.div)`
-	width: 140px;
-	height: 140px;
+	width: 4rem;
+	height: 4rem;
 	cursor: pointer;
 	position: relative;
+	
+	/* background: black; */
 `
 
 export const UiRect = styled(motion.div)`
-	width: 140px;
+	width: 4rem;
 	height: 3px;
 	background: ${styleSystem.primaryCol};	
-	translate: 0 calc(70px - 10px);
+	translate: 0 calc(40px - 10px);
 	position: absolute;
-
+	/* background: red; */
 `;
 
-export const BurguerUIWrapper = styled(motion.div)`
-	position: absolute;
-	z-index: 1000;
-	right: 4rem;
-	top: 4rem;
-`;
 
 
 export const stick1 = {
 	initial: {
 		rotate: "45deg",
 		y: "0px",
-		width: "140px"
+		width: "4rem"
 	},
 	close: {
 		rotate: ["0deg", "0deg", "40deg", "40deg"],
-		y: ["60px", "20px", "0px", "0px"],
-		width: "160px"
+		y: ["1.5rem", "1rem", "0rem", "0rem"],
+		width: "4.2rem"
 	},
 	burguer: {
 		rotate: ["40deg", "40deg", "0deg", "0deg"],
-		y: ["0px", "0px", "20px", "60px"],
-		width: "140px"
+		y: ["0rem", "0rem", ".5rem", "1.5rem"],
+		width: "4rem"
 	}
 }
 
 export const stick2 = {
 	initial: {
 		rotate: "45deg",
-		y: "0px",
-		width: "140px"
+		y: "0rem",
+		width: "4rem"
 	},
 	close: {
 		rotate: ["0deg", "0deg", "-40deg", "-40deg"],
-		y: ["20px", "20px", "0px", "0px"],
-		width: "160px"
+		y: ["1rem", "1rem", "0rem", "0rem"],
+		width: "4.2rem"
 	},
 	burguer: {
 		rotate: ["-40deg", "-40deg", "0deg", "0deg"],
-		y: ["0px", "0px", "20px", "20px"],
-		width: "140px"
+		y: ["0rem", "0rem", ".5rem", ".5rem"],
+		width: "4rem"
 	}
 }
 
 export const stick3 = {
 	initial: {
 		rotate: "45deg",
-		y: "0px",
-		width: "140px"
+		y: "0rem",
+		width: "4rem"
 	},
 	close: {
 		rotate: ["0deg", "0deg", "40deg", "40deg"],
-		y: ["-60px", "-20px", "0px", "0px"],
-		width: "160px"
+		y: ["-1.5rem", "-.75rem", "0rem", "0rem"],
+		width: "4.2rem"
 	},
 	burguer: {
 		rotate: ["40deg", "40deg", "0deg", "0deg"],
-		y: ["0px", "0px", "-20px", "-60px"],
-		width: "140px"
+		y: ["0rem", "0rem", "-.5rem", "-1.5rem"],
+		width: "4rem"
 	}
 }
 
@@ -96,17 +102,17 @@ export const stick4 = {
 	initial: {
 		rotate: "45deg",
 		y: "0px",
-		width: "140px"
+		width: "4rem"
 	},
 	close: {
 		rotate: ["0deg", "0deg", "-40deg", "-40deg"],
-		y: ["-20px", "-20px", "0px", "0px"],
-		width: "160px"
+		y: ["-.75rem", "-.75rem", "0rem", "0rem"],
+		width: "4.2rem"
 	},
 	burguer: {
 		rotate: ["-40deg", "-40deg", "0deg", "0deg"],
-		y: ["0px", "0px", "-20px", "-20px"],
-		width: "140px"
+		y: ["0rem", "0rem", "-.5rem", "-.5rem"],
+		width: "4rem"
 	}
 }
 

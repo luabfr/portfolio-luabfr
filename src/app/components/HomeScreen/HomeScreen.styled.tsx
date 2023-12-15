@@ -4,7 +4,7 @@ import styleSystem from "../styleSystem";
 
 
 export const HeroTitleWrap = styled.section`
-  padding: 4em;
+  padding: 4em 10vw;
 	height: 100vh;
 	display: flex;
 	align-items: center;
@@ -16,7 +16,7 @@ export const HeroTextWrap = styled.section`
 `;
 
 export const STH1 = styled.h1`
-  font-size: 10em;
+  font-size: 8em;
 	font-family: ${styleSystem.font1};
 	font-weight: 300;
   color: ${styleSystem.primaryCol2};
@@ -25,7 +25,7 @@ export const STH1 = styled.h1`
 `;
 
 export const STH2 = styled.h2`
-  font-size: 5em;
+  font-size: 4em;
 	font-family: ${styleSystem.font1};
 	font-weight: 300;
   color: ${styleSystem.primaryCol};
