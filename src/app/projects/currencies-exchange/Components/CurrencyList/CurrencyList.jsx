@@ -3,7 +3,7 @@ import React,{ useEffect,useState,FC } from 'react'
 import { UlCurrency,LiCurrecy,StationFlag,StationName,StationAmount } from '../CustomStyledComponents/CustomStyledComponents';
 import { useSelector,useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
-import { getRatesFromAPI } from '@/app/store/reducers';
+import { getRatesFromAPI } from '@/app/store/currenciesExchangeReducer';
 import Image from 'next/image';
 import {currencyToFlag} from "./CurrencyFlags.jsx"
 
@@ -16,7 +16,7 @@ const CurrencyList = ({ sliceLength }) => {
 	
 	for (const property in firstValue) {
 		if (Object.prototype.hasOwnProperty.call(firstValue,property)) { // TS no labura bien con for...in . Esto es necesario por TS
-			console.log(`${property}: ${firstValue[property]}`);
+			// console.log(`${property}: ${firstValue[property]}`);
 		}
 	}
 

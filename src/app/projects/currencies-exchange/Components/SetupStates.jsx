@@ -1,6 +1,6 @@
 "use client"
 import { useDispatch } from 'react-redux';
-import { getSymbolsFromAPI } from '@/app/store/reducers';
+import { getSymbolsFromAPI } from '@/app/store/currenciesExchangeReducer';
 import { useEffect } from 'react';
 
 const SetupStates = () => {

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export const MenuBG = styled(motion.div)`
 	position: absolute;
-	top: 0;
+	top: -100vh;
 	left:0;
 	width: 100vw;
 	height: 100vh;
@@ -23,8 +23,11 @@ export const MenuUl = styled(motion.div)`
   justify-content: center;
 `;
 
+interface MenuLITS  {
+	onClick: void
+}
 
-export const MenuLI = styled(motion.div)`
+export const MenuLI = styled(motion.div)<MenuLITS>`
 	font-family:${styleSystem.font1}; ;
 	color: ${styleSystem.semiDark};
 	font-size: 4rem;
@@ -37,3 +40,16 @@ export const MenuHR = styled(motion.div)`
 	height: 4px;
 	width: 10rem;
 `;
+
+
+export const initialStatesLI = {
+	opacity: 0,
+	x: "0",
+	marginTop: "-5rem"
+}
+
+export const inViewStatesLI = {
+	opacity: 1,
+	x: "0",
+	marginTop: "0rem"
+}

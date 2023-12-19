@@ -25,8 +25,8 @@ export const BurguerUI: FC<BurguerUIProps> = ({ onClick, isOpen })=>{
 				whileHover={{ scale: 0.9 }}
 				whileTap={{ scale: 0.8 }}	
 				initial={{ opacity: 0}}
-				animate={{ opacity: [0,0,0.5,1] }}
-				transition={{ duration: 1, times: [0, 0.70, 0.71, 1]}}
+				animate={{ opacity: [0, 0, 0.5, 1] }}
+				transition={{ duration: 1, times: [0, 0.70, 0.71, 1] }}
 				>
 
 				<UiRect

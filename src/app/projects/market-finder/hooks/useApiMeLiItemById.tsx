@@ -23,7 +23,7 @@ const useApiMeLiItemById = ( itemById: string ) => {
 				const result: ItemData = await response.json();
 
 
-				console.log('result', result)
+				// console.log('result', result)
 
 
 				const response2 = await fetch(`https://api.mercadolibre.com/categories/${result.category_id}`);

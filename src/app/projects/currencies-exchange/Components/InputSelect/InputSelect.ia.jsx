@@ -2,7 +2,7 @@
 import React,{ FC,useEffect } from 'react';
 import { Label,StyledSelect } from '../CustomStyledComponents/CustomStyledComponents';
 import { useDispatch,useSelector } from 'react-redux';
-import { getRatesFromAPI,selectedOption } from '@/app/store/reducers'; 
+import { getRatesFromAPI,selectedOption } from '@/app/store/currenciesExchangeReducer'; 
 
 
 
