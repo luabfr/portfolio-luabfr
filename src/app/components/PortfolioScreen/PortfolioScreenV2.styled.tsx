@@ -8,8 +8,12 @@ interface BulletsProps {
 	isOrange?: boolean,
 	isCyan?: boolean,
 	isYellow?: boolean,
+	tagColor: number
 }
 
+interface BodyInfoDataGroupProps{
+	isFirst?: boolean
+}
 
 export const Grid = styled.div`
 	display: flex;
@@ -54,6 +58,7 @@ export const ProjectsAllProjects = styled.div`
 	height: 75vh;
 	overflow-y: auto;
 	scrollbar-width: thin;
+	
 	&::-webkit-scrollbar {
 		width: 8px; /* Ancho de la barra de desplazamiento */
 	}
@@ -71,13 +76,45 @@ export const ProjectsSubtitle = styled.h4`
 	color: ${styleSystem.primaryCol};
 	margin: 0;
   font-size: 1rem;
+	cursor: default;
 `;
 
 export const ProjectsName = styled.div`
+	transition: all .5s;
+	cursor: pointer;
+	position: relative;
+	&:hover{
+		color: white;
+
+		/* &::after{
+			content:"";
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 5px;
+			right: -30px;
+			background: white;
+			transform: rotate(45deg);
+		} */
+		
+	}
+
+	/* &::after{
+		transition: all .5s;
+		content:"";
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		top: 5px;
+		right: -60px;
+		background: white;
+		transform: rotate(45deg);
+	} */
+
 
 `;
 
-export const ProjectsUL = styled.ul`
+export const ProjectsUL = styled(motion.ul)`
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
@@ -89,7 +126,7 @@ export const ProjectsUL = styled.ul`
 	}
 `;
 
-export const ProjectsLI = styled.li`
+export const ProjectsLI = styled(motion.li)`
 	padding: .5rem 1rem 0 1rem ;
 	font-size: 1.25rem;
 `;
@@ -112,20 +149,20 @@ export const GridContent = styled.div`
 	font-family: ${styleSystem.font1};
 `;
 
-export const BodyName = styled.h2`
+export const BodyName = styled(motion.h2)`
 	margin-top: 0;
 `;
 
-export const BodyInfo = styled.div`
+export const BodyInfo = styled(motion.div)`
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 2rem;
 
 `;
 
-export const BodyInfoText = styled.div`
+export const BodyInfoText = styled(motion.div)`
 	padding-right: 2rem;
-	width: 75%;
+	width: 50%;
 	p{
 		margin-top: 0;
 	}
@@ -136,9 +173,10 @@ export const BodyInfoData = styled.div`
 	display: flex;
 	flex-direction: column;
 	/* justify-content: space-between; */
+	width: 50%;
 `;
 
-export const BodyInfoDataRow = styled.div`
+export const BodyInfoDataRow = styled(motion.div)`
 	width: 100%;
 	flex-direction: row;
 	display: flex;
@@ -146,26 +184,28 @@ export const BodyInfoDataRow = styled.div`
 `;
 
 
-export const BodyInfoDataGroup = styled.div`
-	min-width: 33%; 
+export const BodyInfoDataGroup = styled(motion.div)<BodyInfoDataGroupProps> `
+	min-width: ${({ isFirst }) => (isFirst ? '20%' : '40%')}; 
+	box-sizing: border-box;
+	
+	${({ isFirst }) => (isFirst ? 'text-align: right;' : '')}; 
 `;
 
 
-export const BodyInfoDataBullet = styled.div<BulletsProps>`
+export const BodyInfoDataBullet = styled(motion.div)<BulletsProps>`
 	background: ${styleSystem.dark};
 	border-radius: 5rem;
-	padding: .25rem .5rem;
+	padding: .25rem 1rem;
 	margin:.25rem;
 	display: inline-flex;
 	color:  ${styleSystem.primaryCol2};
 
-
 	background: ${(props) => {
-	if (props.isGreen) return '#3876BF';
-		if (props.isRed) return '#FF4B91';
-	if (props.isCyan) return '#A25772';
-	if (props.isOrange) return '#2D9596';
-	if (props.isYellow) return '#D83F31';
+	if (props.tagColor == 0) return '#3876BF';
+	if (props.tagColor == 1) return '#FF4B91';
+	if (props.tagColor == 2) return '#A25772';
+	if (props.tagColor == 3) return '#2D9596';
+	if (props.tagColor == 4) return '#D83F31';
 		return `${styleSystem.dark}`; 
 	}};
 
@@ -186,7 +226,7 @@ export const BodyInfoDataValue = styled.div`
 
 
 
-export const BodyImgWrapper = styled.div`
+export const BodyImgWrapper = styled(motion.div)`
 	background: #000;
 	height: 20rem;
 `

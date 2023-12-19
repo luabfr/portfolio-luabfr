@@ -9,6 +9,7 @@ export const MainX = styled.main`
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
+	box-sizing: border-box;
 `
 
 

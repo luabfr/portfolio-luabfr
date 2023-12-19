@@ -13,11 +13,19 @@ const PreloaderX = styled.div`
 
 const Preloader =()=>{
 		return(
-			<PreloaderX>
-				<h1>
-					CARGANDO...
+			<div 
+				style={{
+					background:"#192231", 
+					width: "100vw", 
+					height:"100vh",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",						
+			}}>
+				<h1 style={{ color:"#C0B283"}}>
+					...
 				</h1>
-			</PreloaderX>
+			</div>
 		)
 
 }

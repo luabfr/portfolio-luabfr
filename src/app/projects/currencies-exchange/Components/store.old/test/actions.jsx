@@ -39,7 +39,7 @@ const error_get_API = payload => ({
 const  getSymbolsFromAPI = (payload) =>{
 	return dispatch =>{
 		dispatch( start_get_symbols_API() ) // Esto se ejecuta inmediatamente antes de llamar a la API
-		console.log("freeApiKey",payload)
+		// console.log("freeApiKey",payload)
 		fetch(`${freeApiURL}latest?${freeApiKey}&currencies=${payload.currenciesList}`)
 			.then( response=>response.json() )
 			.then( result => dispatch( success_get_symbols_from_API( result.data ) ) ) // Esto se ejecuta cuando fetch() se conecto correctamente a la API 

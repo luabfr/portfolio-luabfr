@@ -1,7 +1,7 @@
 "use client"
 import { useDispatch,useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getSymbolsFromAPI,getRatesFromAPI } from '@/app/store/reducers';
+import { getSymbolsFromAPI,getRatesFromAPI } from '@/app/store/currenciesExchangeReducer';
 import { Button } from './CustomStyledComponents/CustomStyledComponents';
 import InputSelect from './InputSelect/InputSelect.ia.jsx';
 import MyDatePicker from './MyDatePicker/MyDatePicker';
