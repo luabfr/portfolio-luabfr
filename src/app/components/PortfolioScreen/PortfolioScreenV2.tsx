@@ -55,7 +55,8 @@ const PortfolioScreenV2 = () =>{
 
 			{/* Project Content */}
 			{/* Project Content */}
-			<ProjectsContent thisProject={selectedProject == undefined ? justForSecurityProject : selectedProject }	/>				
+			<ProjectsContent 
+				thisProject={selectedProject == undefined ? justForSecurityProject : selectedProject }	/>				
 				
 		</Grid>
 	)

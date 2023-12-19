@@ -142,7 +142,7 @@ const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName, 
 			<BodyImgWrapper
 				initial={{ opacity: 0, x: "-1rem" }}
 				whileInView={{ opacity: 1, x: "0rem" }}
-				transition={{ duration: 1, delay: .6}}>
+				transition={{ duration: 1, delay: .8}}>
 				{/* Imagen (o carousel) del projecto */}
 				
 				{imgs.map((img, index) => (
