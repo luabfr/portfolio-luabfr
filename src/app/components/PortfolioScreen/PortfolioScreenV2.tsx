@@ -11,7 +11,7 @@ import { projects, projectsContent } from './_projects';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateProjectInView } from '@/app/store/uiStates';
 import { storeTypes } from '@/app/store/interfaces';
-
+import { projectMarketFinder } from './_projects';
 
 const PortfolioScreenV2 = () =>{
 	const projectInView = useSelector((state: storeTypes) => state.uiStates.projectInView);
@@ -26,7 +26,7 @@ const PortfolioScreenV2 = () =>{
 
 	const selectedProject = findProject();
 
-
+	const justForSecurityProject = projectMarketFinder
 
 	return(
 		
@@ -55,7 +55,7 @@ const PortfolioScreenV2 = () =>{
 
 			{/* Project Content */}
 			{/* Project Content */}
-			<ProjectsContent thisProject={selectedProject}	/>				
+			<ProjectsContent thisProject={selectedProject == undefined ? justForSecurityProject : selectedProject }	/>				
 				
 		</Grid>
 	)

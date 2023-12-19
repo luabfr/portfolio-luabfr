@@ -1,6 +1,6 @@
 
 //Market Finder (Mercado Libre)
-const projectMarketFinder = {
+export const projectMarketFinder = {
 	projectName: "MarketFinder",
 	description: "Based on the MercadoLibre Test Challenge, MarketFinder is a personal project I developed to enhance my coding skills. \nThe user can search for a product, and the app connects to the MercadoLibre API to return a list of products that match the user's request. Furthermore, the app includes filters and a dynamic detail view for the product selected by the user.",
 	info: {

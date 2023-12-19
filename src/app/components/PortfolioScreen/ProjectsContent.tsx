@@ -25,13 +25,16 @@ interface ProjectsContentProps {
 		},
 		tags: string[],
 		imgs: string[],
-		// link: string
+		link?: string,
+		videoVimeo?: string,
+		videoYoutube?: string
 	}
 }
 
 const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName, description, info, tags, imgs }}) => {
-
+	
 	const uniqueKey = `project_${projectName.replace(/\s+/g, '-')}`;
+
 
 	return(
 		<GridContent key={uniqueKey}>
@@ -51,7 +54,7 @@ const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName, 
 				<BodyInfoText 
 					initial={{ opacity: 0, x: "-1rem" }}
 					whileInView={{ opacity: 1, x: "0rem" }}
-					transition={{ duration: 1, }}>
+					transition={{ duration: 1, delay: .2 }}>
 					<p>	{description}	</p>
 				</BodyInfoText>
 
@@ -62,7 +65,7 @@ const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName, 
 					<BodyInfoDataRow
 						initial={{ opacity: 0, x: "-1rem" }}
 						whileInView={{ opacity: 1, x: "0rem" }}
-						transition={{ duration: 1, delay: .3 }}>
+						transition={{ duration: 1, delay: .4 }}>
 
 						<BodyInfoDataGroup 
 							initial={{ opacity: 0, x: "-1rem" }}
@@ -89,7 +92,7 @@ const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName, 
 						</BodyInfoDataGroup>
 
 						<BodyInfoDataGroup 
-							isFirst
+							isFirst={true}
 							initial={{ opacity: 0, x: "-1rem" }}
 							whileInView={{ opacity: 1, x: "0rem" }}
 							transition={{ duration: 1, }}>
@@ -139,7 +142,7 @@ const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName, 
 			<BodyImgWrapper
 				initial={{ opacity: 0, x: "-1rem" }}
 				whileInView={{ opacity: 1, x: "0rem" }}
-				transition={{ duration: 1, }}>
+				transition={{ duration: 1, delay: .6}}>
 				{/* Imagen (o carousel) del projecto */}
 				
 				{imgs.map((img, index) => (
