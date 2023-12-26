@@ -169,7 +169,7 @@ const MeliTest =()=>{
 							</Flex>
 							{productsByPagination.length !== 0 && productsByPagination[(pagination-1)].map((item,index) => (
 								<Card style={{ width: "100%" , }} key={index} >
-									<Link href={`/meli-test/${item.id}`} >
+									<Link href={`/projects/market-finder/${item.id}`} >
 										<Flex>
 											<Flex align="center" vertical style={{width: "160px", minWidth:"160px", justifyContent:"center", marginLeft:"-1rem"}}>
 												<Image

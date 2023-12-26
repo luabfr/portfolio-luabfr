@@ -51,7 +51,7 @@ const Page = ({ params }: PageProps)=>{
 		return (
 			<Layout style={{ width: "100%",minHeight: "100vh",display: 'flex',alignItems: 'center',background: "#fff"  }}>
 				<Flex style={{background:"white" , width:"100%", padding:"1rem 2rem ", justifyContent:"space-between"}}>
-					<Link href="/meli-test" style={{ fontSize: '2rem',color: '#08c' }}>
+					<Link href="/projects/market-finder" style={{ fontSize: '2rem',color: '#08c' }}>
 						<ArrowLeftOutlined />
 					</Link>
 					<Title style={{ margin: "0" }}>Market<span style={{ margin: "0",fontWeight: "bold",color: '#08c' }}>Finder</span></Title>

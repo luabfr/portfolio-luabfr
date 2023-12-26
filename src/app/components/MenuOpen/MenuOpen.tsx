@@ -34,6 +34,7 @@ const MenuOpen: FC = () => {
 					initial={initialStatesLI}
 					transition={{ delay: isMenuOpen ?  0.2 : 0 }}
 					whileInView={inViewStatesLI}
+					whileHover={{ x: 10, color:"#192231"}}
 					onClick={()=>goToView("home")}>
 					Home
 				</MenuLI>
@@ -47,6 +48,7 @@ const MenuOpen: FC = () => {
 				<MenuLI
 					initial={initialStatesLI}
 					transition={{ delay: isMenuOpen ?  0.4 : 0 }}
+					whileHover={{ x: 10, color: "#192231" }}
 					whileInView={inViewStatesLI}
 					onClick={() => goToView("portfolio")}>
 					Portfolio
@@ -61,6 +63,7 @@ const MenuOpen: FC = () => {
 					initial={initialStatesLI}
 					transition={{ delay: isMenuOpen ?  0.6 : 0 }}
 					whileInView={inViewStatesLI}
+					whileHover={{ x: 10, color: "#192231" }}
 					onClick={() => goToView("about")}>
 					About me
 				</MenuLI>
@@ -74,6 +77,7 @@ const MenuOpen: FC = () => {
 					initial={initialStatesLI}
 					transition={{ delay: isMenuOpen ?  0.8 : 0 }}
 					whileInView={inViewStatesLI}
+					whileHover={{ x: 10, color: "#192231" }}
 					onClick={() => goToView("contact")}>
 					Contact
 				</MenuLI>

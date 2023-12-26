@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import {
 	BodyName,
+	BodySubtitle,
 	BodyInfo,
 	BodyImgWrapper,
 	BodyInfoText,
@@ -12,39 +13,36 @@ import {
 	BodyInfoDataRow,
 	GridContent,
 } from './PortfolioScreenV2.styled';
+import { ProjectsContentProps } from './PortfolioInterfaces';
+import PortfolioIconsDisplay from '../PortfolioIconsDisplay/PortfolioIconsDisplay';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import PortfolioImages from '../PortfolioImages/PortfolioImages';
 
 
-interface ProjectsContentProps {
-	thisProject:{
-		projectName: string,
-		description: string,
-		info: {
-			year: string,
-			typeOfWork: string,
-			industry: string,
-		},
-		tags: string[],
-		imgs: string[],
-		link?: string,
-		videoVimeo?: string,
-		videoYoutube?: string
-	}
-}
 
-const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName, description, info, tags, imgs }}) => {
+
+const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName,projectSubtitle, description, info, tags, imgs, links }}) => {
 	
 	const uniqueKey = `project_${projectName.replace(/\s+/g, '-')}`;
 
 
 	return(
 		<GridContent key={uniqueKey}>
+			
 			{/* Project Title */}
 			<BodyName
 				initial={{ opacity: 0, x: "-1rem" }}
-				whileInView={{ opacity: 1, x: "0rem" }}
+				animate={{ opacity: 1, x: "0rem" }}
 				transition={{ duration: 1, }}>
 				{projectName}
 			</BodyName>
+			<BodySubtitle
+				initial={{ opacity: 0, x: "-1rem" }}
+				animate={{ opacity: 1, x: "0rem" }}
+				transition={{ duration: 1, }}>
+				{projectSubtitle}
+			</BodySubtitle>
 
 
 
@@ -53,23 +51,38 @@ const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName, 
 				{/* Project description */}
 				<BodyInfoText 
 					initial={{ opacity: 0, x: "-1rem" }}
-					whileInView={{ opacity: 1, x: "0rem" }}
+					animate={{ opacity: 1, x: "0rem" }}
 					transition={{ duration: 1, delay: .2 }}>
-					<p>	{description}	</p>
+					{description}
 				</BodyInfoText>
 
 
 				{/* Project Data */}
-				<BodyInfoData>
-
+				 {/* <BodyInfoData> */}
+					{/*
 					<BodyInfoDataRow
 						initial={{ opacity: 0, x: "-1rem" }}
-						whileInView={{ opacity: 1, x: "0rem" }}
-						transition={{ duration: 1, delay: .4 }}>
+						animate={{ opacity: 1, x: "0rem" }}
+						transition={{ duration: 1, delay: .4 }}> */}
 
-						<BodyInfoDataGroup 
+						{/* Year */}
+						{/* <BodyInfoDataGroup
+							isFirst={true}
 							initial={{ opacity: 0, x: "-1rem" }}
-							whileInView={{ opacity: 1, x: "0rem" }}
+							animate={{ opacity: 1, x: "0rem" }}
+							transition={{ duration: 1, }}>
+							<BodyInfoDataKey>
+								{"Year"}
+							</BodyInfoDataKey>
+							<BodyInfoDataValue>
+								{info.year}
+							</BodyInfoDataValue>
+						</BodyInfoDataGroup> */}
+
+						{/* Industry */}
+						{/* <BodyInfoDataGroup 
+							initial={{ opacity: 0, x: "-1rem" }}
+							animate={{ opacity: 1, x: "0rem" }}
 							transition={{ duration: 1, }}>
 							<BodyInfoDataKey>
 								{"Industry"}
@@ -77,11 +90,12 @@ const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName, 
 							<BodyInfoDataValue>
 								{info.industry}
 							</BodyInfoDataValue>
-						</BodyInfoDataGroup>
+						</BodyInfoDataGroup> */}
 
-						<BodyInfoDataGroup
+						{/* Type of Work */}
+						{/* <BodyInfoDataGroup
 							initial={{ opacity: 0, x: "-1rem" }}
-							whileInView={{ opacity: 1, x: "0rem" }}
+							animate={{ opacity: 1, x: "0rem" }}
 							transition={{ duration: 1, }}>
 							<BodyInfoDataKey>
 								{"Type of work"}
@@ -91,30 +105,32 @@ const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName, 
 							</BodyInfoDataValue>
 						</BodyInfoDataGroup>
 
-						<BodyInfoDataGroup 
-							isFirst={true}
-							initial={{ opacity: 0, x: "-1rem" }}
-							whileInView={{ opacity: 1, x: "0rem" }}
-							transition={{ duration: 1, }}>
-							<BodyInfoDataKey>
-								{"Year"}
-							</BodyInfoDataKey>
-							<BodyInfoDataValue>
-								{info.year}
-							</BodyInfoDataValue>
-						</BodyInfoDataGroup>
+						
 					
-					</BodyInfoDataRow>
+					</BodyInfoDataRow> */}
 
 
 					<BodyInfoDataRow
 						initial={{ opacity: 0, x: "-1rem" }}
-						whileInView={{ opacity: 1, x: "0rem" }}
+						animate={{ opacity: 1, x: "0rem" }}
 						transition={{ duration: 1, delay: .6 }}>
-						{/* Project Tags */}
+
+						{/* Links To */}
+						<BodyInfoDataGroup
+							isFirst={true}
+							initial={{ opacity: 0, x: "-1rem" }}
+							animate={{ opacity: 1, x: "0rem" }}
+							transition={{ duration: 1, }}>
+							<BodyInfoDataKey>
+								{"Links to"}
+							</BodyInfoDataKey>
+							<PortfolioIconsDisplay links={links} />
+						</BodyInfoDataGroup>
+
+						{/* Tags */}
 						<BodyInfoDataGroup
 							initial={{ opacity: 0, x: "-1rem" }}
-							whileInView={{ opacity: 1, x: "0rem" }}
+							animate={{ opacity: 1, x: "0rem" }}
 							transition={{ duration: 1, }}>
 							<BodyInfoDataKey>
 								{"Tags"}
@@ -125,31 +141,31 @@ const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName, 
 										tagColor={index} 
 										key={index}
 										initial={{ opacity: 0, x: "-1rem" }}
-										whileInView={{ opacity: 1, x: "0rem" }}
+										animate={{ opacity: 1, x: "0rem" }}
 										transition={{ duration: 1, delay: index / 5 }}>
 											{tag}
 									</BodyInfoDataBullet>
 								))}
 							</BodyInfoDataValue>
 						</BodyInfoDataGroup>
+
 					</BodyInfoDataRow>
 
-				</BodyInfoData>
+
+				{/* </BodyInfoData> */}
 
 
 			</BodyInfo>
 
 			<BodyImgWrapper
 				initial={{ opacity: 0, x: "-1rem" }}
-				whileInView={{ opacity: 1, x: "0rem" }}
+				animate={{ opacity: 1, x: "0rem" }}
 				transition={{ duration: 1, delay: .6}}>
+
 				{/* Imagen (o carousel) del projecto */}
-				
-				{imgs.map((img, index) => (
-					<div key={index}>
-						{img}
-					</div>
-				))}
+				<PortfolioImages imgs={imgs}/>
+
+
 			</BodyImgWrapper>
 		</GridContent>
 	)

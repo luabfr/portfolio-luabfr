@@ -9,9 +9,6 @@ const { Text,Title } = Typography
 export default function OldFooter() {
 	return (
 		<>
-			<Flex>
-				<Link href="/meli-test"><Title level={2} style={{ margin: "0",fontWeight: "bold" }}>Meli Test</Title></Link>
-			</Flex>
 
 
 

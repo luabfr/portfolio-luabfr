@@ -33,6 +33,7 @@ export const MenuLI = styled(motion.div)<MenuLITS>`
 	font-size: 4rem;
 	line-height: 2;
 	cursor: pointer;
+
 `;
 
 export const MenuHR = styled(motion.div)`

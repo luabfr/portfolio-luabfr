@@ -142,7 +142,7 @@ export const GridContent = styled.div`
 	height: 100vh;
 	overflow-y: auto;	
 	padding: 4rem;
-	padding-top: 6rem;
+	padding-top: 5rem;
 	padding-right: 10vw;
 	box-sizing: border-box;
 
@@ -150,21 +150,34 @@ export const GridContent = styled.div`
 `;
 
 export const BodyName = styled(motion.h2)`
-	margin-top: 0;
+	margin: 0;
+	font-size: 2.4rem;
 `;
+
+export const BodySubtitle = styled(motion.h3)`
+	margin-top: 0;
+	color: ${styleSystem.primaryCol};;
+	font-size: 1.4rem;
+`;
+
+
+
 
 export const BodyInfo = styled(motion.div)`
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 2rem;
+	gap: 2rem;
 
 `;
 
 export const BodyInfoText = styled(motion.div)`
-	padding-right: 2rem;
-	width: 50%;
+	/* padding-right: 2rem; */
+	/* width: 50%; */
+	width: 60%;
 	p{
 		margin-top: 0;
+		width: 100%;
 	}
 	
 `;
@@ -173,22 +186,23 @@ export const BodyInfoData = styled.div`
 	display: flex;
 	flex-direction: column;
 	/* justify-content: space-between; */
-	width: 50%;
+	/* width: 50%; */
 `;
 
 export const BodyInfoDataRow = styled(motion.div)`
-	width: 100%;
-	flex-direction: row;
+	width: 40%;
+	flex-direction: column;
 	display: flex;
-	justify-content: space-between;
+	gap: 2rem;
+	/* justify-content: space-between; */
 `;
 
 
 export const BodyInfoDataGroup = styled(motion.div)<BodyInfoDataGroupProps> `
-	min-width: ${({ isFirst }) => (isFirst ? '20%' : '40%')}; 
+	min-width: ${({ isFirst }) => (isFirst ? '30%' : '40%')}; 
 	box-sizing: border-box;
 	
-	${({ isFirst }) => (isFirst ? 'text-align: right;' : '')}; 
+	/* ${({ isFirst }) => (isFirst ? 'text-align: right;' : '')};  */
 `;
 
 
@@ -199,6 +213,7 @@ export const BodyInfoDataBullet = styled(motion.div)<BulletsProps>`
 	margin:.25rem;
 	display: inline-flex;
 	color:  ${styleSystem.primaryCol2};
+	cursor: default;
 
 	background: ${(props) => {
 	if (props.tagColor == 0) return '#3876BF';
@@ -227,8 +242,8 @@ export const BodyInfoDataValue = styled.div`
 
 
 export const BodyImgWrapper = styled(motion.div)`
-	background: #000;
-	height: 20rem;
+	/* background: #000; */
+	/* height: 20rem; */
 `
 
 
