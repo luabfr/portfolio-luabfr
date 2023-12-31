@@ -12,6 +12,7 @@ import {
 	BodyInfoDataBullet,
 	BodyInfoDataRow,
 	GridContent,
+	FirstRow,
 } from './PortfolioScreenV2.styled';
 import { ProjectsContentProps } from './PortfolioInterfaces';
 import PortfolioIconsDisplay from '../PortfolioIconsDisplay/PortfolioIconsDisplay';
@@ -30,132 +31,84 @@ const ProjectsContent: FC<ProjectsContentProps> = ({ thisProject:{ projectName,p
 	return(
 		<GridContent key={uniqueKey}>
 			
-			{/* Project Title */}
-			<BodyName
-				initial={{ opacity: 0, x: "-1rem" }}
-				animate={{ opacity: 1, x: "0rem" }}
-				transition={{ duration: 1, }}>
-				{projectName}
-			</BodyName>
-			<BodySubtitle
-				initial={{ opacity: 0, x: "-1rem" }}
-				animate={{ opacity: 1, x: "0rem" }}
-				transition={{ duration: 1, }}>
-				{projectSubtitle}
-			</BodySubtitle>
+			<FirstRow>
+
+				{/* Title + Description */}
+				<BodyInfo>
+					
+					<BodyName
+						initial={{ opacity: 0, x: "-1rem" }}
+						animate={{ opacity: 1, x: "0rem" }}
+						transition={{ duration: 1, }}>
+						{projectName}
+					</BodyName>
+					<BodySubtitle
+						initial={{ opacity: 0, x: "-1rem" }}
+						animate={{ opacity: 1, x: "0rem" }}
+						transition={{ duration: 1, }}>
+						{projectSubtitle}
+					</BodySubtitle>
+
+					<BodyInfoText
+						initial={{ opacity: 0, x: "-1rem" }}
+						animate={{ opacity: 1, x: "0rem" }}
+						transition={{ duration: 1, delay: .2 }}>
+						{description}
+					</BodyInfoText>
+
+				</BodyInfo>
 
 
+			
 
-			<BodyInfo>
+				{/* Links To + Tags */}
 
-				{/* Project description */}
-				<BodyInfoText 
+				<BodyInfoDataRow
 					initial={{ opacity: 0, x: "-1rem" }}
 					animate={{ opacity: 1, x: "0rem" }}
-					transition={{ duration: 1, delay: .2 }}>
-					{description}
-				</BodyInfoText>
+					transition={{ duration: 1, delay: .6 }}>
 
-
-				{/* Project Data */}
-				 {/* <BodyInfoData> */}
-					{/*
-					<BodyInfoDataRow
+					{/* Links To */}
+					<BodyInfoDataGroup
+						isFirst={true}
 						initial={{ opacity: 0, x: "-1rem" }}
 						animate={{ opacity: 1, x: "0rem" }}
-						transition={{ duration: 1, delay: .4 }}> */}
+						transition={{ duration: 1, }}>
+						<BodyInfoDataKey>
+							{"Links to"}
+						</BodyInfoDataKey>
+						<PortfolioIconsDisplay links={links} />
+					</BodyInfoDataGroup>
 
-						{/* Year */}
-						{/* <BodyInfoDataGroup
-							isFirst={true}
-							initial={{ opacity: 0, x: "-1rem" }}
-							animate={{ opacity: 1, x: "0rem" }}
-							transition={{ duration: 1, }}>
-							<BodyInfoDataKey>
-								{"Year"}
-							</BodyInfoDataKey>
-							<BodyInfoDataValue>
-								{info.year}
-							</BodyInfoDataValue>
-						</BodyInfoDataGroup> */}
-
-						{/* Industry */}
-						{/* <BodyInfoDataGroup 
-							initial={{ opacity: 0, x: "-1rem" }}
-							animate={{ opacity: 1, x: "0rem" }}
-							transition={{ duration: 1, }}>
-							<BodyInfoDataKey>
-								{"Industry"}
-							</BodyInfoDataKey>
-							<BodyInfoDataValue>
-								{info.industry}
-							</BodyInfoDataValue>
-						</BodyInfoDataGroup> */}
-
-						{/* Type of Work */}
-						{/* <BodyInfoDataGroup
-							initial={{ opacity: 0, x: "-1rem" }}
-							animate={{ opacity: 1, x: "0rem" }}
-							transition={{ duration: 1, }}>
-							<BodyInfoDataKey>
-								{"Type of work"}
-							</BodyInfoDataKey>
-							<BodyInfoDataValue>
-								{info.typeOfWork}
-							</BodyInfoDataValue>
-						</BodyInfoDataGroup>
-
-						
-					
-					</BodyInfoDataRow> */}
-
-
-					<BodyInfoDataRow
+					{/* Tags */}
+					<BodyInfoDataGroup
 						initial={{ opacity: 0, x: "-1rem" }}
 						animate={{ opacity: 1, x: "0rem" }}
-						transition={{ duration: 1, delay: .6 }}>
+						transition={{ duration: 1, }}>
+						<BodyInfoDataKey>
+							{"Tags"}
+						</BodyInfoDataKey>
+						<BodyInfoDataValue>
+							{tags.map((tag, index) => (
+								<BodyInfoDataBullet 
+									tagColor={index} 
+									key={index}
+									initial={{ opacity: 0, x: "-1rem" }}
+									animate={{ opacity: 1, x: "0rem" }}
+									transition={{ duration: 1, delay: index / 5 }}>
+										{tag}
+								</BodyInfoDataBullet>
+							))}
+						</BodyInfoDataValue>
+					</BodyInfoDataGroup>
 
-						{/* Links To */}
-						<BodyInfoDataGroup
-							isFirst={true}
-							initial={{ opacity: 0, x: "-1rem" }}
-							animate={{ opacity: 1, x: "0rem" }}
-							transition={{ duration: 1, }}>
-							<BodyInfoDataKey>
-								{"Links to"}
-							</BodyInfoDataKey>
-							<PortfolioIconsDisplay links={links} />
-						</BodyInfoDataGroup>
+				</BodyInfoDataRow>
 
-						{/* Tags */}
-						<BodyInfoDataGroup
-							initial={{ opacity: 0, x: "-1rem" }}
-							animate={{ opacity: 1, x: "0rem" }}
-							transition={{ duration: 1, }}>
-							<BodyInfoDataKey>
-								{"Tags"}
-							</BodyInfoDataKey>
-							<BodyInfoDataValue>
-								{tags.map((tag, index) => (
-									<BodyInfoDataBullet 
-										tagColor={index} 
-										key={index}
-										initial={{ opacity: 0, x: "-1rem" }}
-										animate={{ opacity: 1, x: "0rem" }}
-										transition={{ duration: 1, delay: index / 5 }}>
-											{tag}
-									</BodyInfoDataBullet>
-								))}
-							</BodyInfoDataValue>
-						</BodyInfoDataGroup>
-
-					</BodyInfoDataRow>
+			</FirstRow>
 
 
-				{/* </BodyInfoData> */}
 
 
-			</BodyInfo>
 
 			<BodyImgWrapper
 				initial={{ opacity: 0, x: "-1rem" }}

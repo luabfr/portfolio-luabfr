@@ -1,0 +1,18 @@
+/* Esto NO se esta utilizando */
+
+body{
+	overflow-x: scroll;
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		width: 8px; 
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #192231; 
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: #404A42; 
+		border-radius: 4px; 
+	}
+}

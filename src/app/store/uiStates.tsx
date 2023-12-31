@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
 	value: 0,
 	inView: "home",
-	projectInView: "MarketFinder",
+	projectInView: "PortfolioHome",
 	isMenuOpen: false,
 };
 

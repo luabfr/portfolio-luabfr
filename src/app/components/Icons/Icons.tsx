@@ -19,10 +19,84 @@ import vimeoColor from "../../../../public/icons/vimeo-color.svg";
 import youtubeColor from "../../../../public/icons/youtube-color.svg";
 import pdf from "../../../../public/icons/pdf.svg";
 
+
+import whatsapp from "../../../../public/icons/whatsapp.svg";
+import email1 from "../../../../public/icons/email1.svg";
+import email2 from "../../../../public/icons/email2.svg";
+import github from "../../../../public/icons/github.svg";
+import linkedin from "../../../../public/icons/linkedin.svg";
+
+
+
+
 interface IconTypes{
 	width?:number,
 	height?: number
 }
+
+export const IconGithub: FC<IconTypes> = ({ width, height }) => {
+	return (
+		<Image
+			priority
+			width={width == undefined ? "30" : width}
+			height={height == undefined ? "30" : height}
+			src={github}
+			alt="github"
+		/>
+	)
+}
+
+export const IconLinkedin: FC<IconTypes> = ({ width, height }) => {
+	return (
+		<Image
+			priority
+			width={width == undefined ? "30" : width}
+			height={height == undefined ? "30" : height}
+			src={linkedin}
+			alt="linkedin"
+		/>
+	)
+}
+
+
+export const IconWhatsapp: FC<IconTypes> = ({ width, height }) => {
+	return (
+		<Image
+			priority
+			width={width == undefined ? "30" : width}
+			height={height == undefined ? "30" : height}
+			src={whatsapp}
+			alt="Whatsapp"
+		/>
+	)
+}
+
+
+export const IconEmail1: FC<IconTypes> = ({ width, height }) => {
+	return (
+		<Image
+			priority
+			width={width == undefined ? "30" : width}
+			height={height == undefined ? "30" : height}
+			src={email1}
+			alt="e-mail"
+		/>
+	)
+}
+
+export const IconEmail2: FC<IconTypes> = ({ width, height }) => {
+	return (
+		<Image
+			priority
+			width={width == undefined ? "30" : width}
+			height={height == undefined ? "30" : height}
+			src={email2}
+			alt="e-mail"
+		/>
+	)
+}
+
+
 
 
 export const IconPDF:FC<IconTypes> = ( { width, height } ) => {

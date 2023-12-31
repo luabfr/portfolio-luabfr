@@ -17,6 +17,7 @@ import {
 import { ProjectsContentProps } from "../PortfolioScreen/PortfolioInterfaces"
 import styled from "styled-components";
 import Link from "next/link";
+import styleSystem from "../styleSystem";
 
 interface ProjectComponentProps {
 	links?: ProjectsContentProps['thisProject']['links'];
@@ -25,6 +26,18 @@ interface ProjectComponentProps {
 const A = styled.a`
  	margin-right: .5rem;
 	margin-left: .5rem;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	border: 2px solid ${styleSystem.primaryCol};
+	background: ${styleSystem.primaryCol2};
+	transition: all .3s;
+	&:hover{
+		border-color: ${styleSystem.primaryCol};
+		background: ${styleSystem.light};
+	}
 `;
 
 const Div =styled.div`

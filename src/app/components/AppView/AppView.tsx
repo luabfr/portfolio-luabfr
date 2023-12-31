@@ -9,7 +9,8 @@ import PortfolioScreenV2 from '../PortfolioScreen/PortfolioScreenV2';
 import uiStates from '@/app/store/uiStates';
 import { storeTypes } from '@/app/store/interfaces';
 import { updateIsMenuOpen, updateView } from '@/app/store/uiStates';
-
+import AboutMe from '../AboutMe/AboutMe';
+import FindMeOn from '../FindMeOn/FindMeOn';
 
 
 const AppView =()=>{
@@ -52,6 +53,14 @@ const AppView =()=>{
 
 				{inView === "portfolio" &&
 					<PortfolioScreenV2 />
+				}
+
+				{inView === "about" &&
+					<AboutMe />
+				}
+
+				{inView === "findmeon" &&
+					<FindMeOn />
 				}
 
 

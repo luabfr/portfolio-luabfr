@@ -12,9 +12,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateProjectInView } from '@/app/store/uiStates';
 import { storeTypes } from '@/app/store/interfaces';
 import { projectMarketFinder } from './_projects';
+import PortfolioHome from '../PortfolioHome/PortfolioHome';
+import { IconBurgerBG } from './PortfolioScreenV2.styled';
 
 const PortfolioScreenV2 = () =>{
 	const projectInView = useSelector((state: storeTypes) => state.uiStates.projectInView);
+	const dispatch = useDispatch();
+	// const projectInView = useSelector((state: storeTypes) => state.uiStates.projectInView);
+
+	const goToView = (viewName: string) => {
+		dispatch(updateProjectInView(viewName));
+	}
 
 	// Función para buscar el proyecto correspondiente
 	const findProject = () => {
@@ -28,15 +36,18 @@ const PortfolioScreenV2 = () =>{
 
 	const justForSecurityProject = projectMarketFinder
 
+
 	return(
 		
 		<Grid>
 
+			<IconBurgerBG />
+
 			{/* Projects Index */}
 			{/* Projects Index */}
 			<GridIndex>
-				<ProjectsTitle>
-					<h1>Portfolio</h1>
+				<ProjectsTitle>					
+					<h1 onClick={() => goToView("PortfolioHome")}>Portfolio</h1>
 					<hr/>
 				</ProjectsTitle>
 				
@@ -53,9 +64,17 @@ const PortfolioScreenV2 = () =>{
 			</GridIndex>
 
 
-			{/* Project Content */}
-			{/* Project Content */}
-			<ProjectsContent thisProject={selectedProject == undefined ? justForSecurityProject : selectedProject }	/>				
+			{/* Portfolio - Home */}
+			{projectInView == "PortfolioHome" &&		
+				<PortfolioHome />
+			}
+			
+
+			{/* Portfolio - Projects */}
+			{projectInView !== "PortfolioHome" &&
+				<ProjectsContent thisProject={selectedProject == undefined ? justForSecurityProject : selectedProject} />				
+			}
+
 				
 		</Grid>
 	)

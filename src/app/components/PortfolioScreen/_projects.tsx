@@ -114,7 +114,7 @@ const projectAnotadorDeTruco = {
 const projectRanchapp = {
 	projectName: "Ranchapp",
 	projectSubtitle: "UX/UI Design work for a Coderhouse course",
-	description: "The UX and UI design for a mobile application aimed at social gatherings, similar to Meetup and Eventbrite, involved creating an intuitive and visually appealing interface that catered to users seeking social events and meetups.Using Android design-pattern, this work included crafting user-centric experiences, intuitive navigation, event discovery features, engaging event pages, seamless registration and a map view, as well as interactive elements to facilitate connections among users.The design prioritized accessibility, ease of use, and a vibrant aesthetic to enhance the overall user experience.",
+	description: "The UX and UI design for a mobile application aimed at social gatherings, similar to Meetup and Eventbrite, involved creating an intuitive and visually appealing interface that catered to users seeking social events and meetups. Using Android design-pattern, this work included crafting user-centric experiences, intuitive navigation, event discovery features, engaging event pages, seamless registration and a map view, as well as interactive elements to facilitate connections among users.The design prioritized accessibility, ease of use, and a vibrant aesthetic to enhance the overall user experience.",
 	info: {
 		year: "2021",
 		typeOfWork: "App",

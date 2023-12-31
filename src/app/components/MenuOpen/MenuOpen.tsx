@@ -78,8 +78,8 @@ const MenuOpen: FC = () => {
 					transition={{ delay: isMenuOpen ?  0.8 : 0 }}
 					whileInView={inViewStatesLI}
 					whileHover={{ x: 10, color: "#192231" }}
-					onClick={() => goToView("contact")}>
-					Contact
+					onClick={() => goToView("findmeon")}>
+					Find me on
 				</MenuLI>
 
 

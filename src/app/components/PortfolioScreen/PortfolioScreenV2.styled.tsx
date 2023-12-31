@@ -52,6 +52,16 @@ export const ProjectsTitle = styled.div`
 	height: 25vh;
 	padding-top: 4rem;
 	box-sizing: border-box;
+	text-transform: uppercase;
+	cursor: pointer;
+	h1{
+		transition: all .3s;	
+	}
+	&:hover{
+		h1{
+			color: ${styleSystem.primaryCol};
+		}
+	}
 `;
 
 export const ProjectsAllProjects = styled.div`
@@ -137,7 +147,7 @@ export const ProjectsLI = styled(motion.li)`
 // Content - Porject Info (Right Content)
 // Content - Porject Info (Right Content)
 export const GridContent = styled.div`
-	background: ${styleSystem.light};
+	background: ${styleSystem.dark};
 	width: 65vw;
 	height: 100vh;
 	overflow-y: auto;	
@@ -149,53 +159,60 @@ export const GridContent = styled.div`
 	font-family: ${styleSystem.font1};
 `;
 
+
+export const FirstRow = styled(motion.div)`
+	display: flex;
+	flex-direction: row;
+	gap: 4rem;
+	box-sizing: border-box;
+	margin-bottom: 2rem;
+`;
+
 export const BodyName = styled(motion.h2)`
 	margin: 0;
 	font-size: 2.4rem;
+	color: ${styleSystem.primaryCol2};
 `;
 
 export const BodySubtitle = styled(motion.h3)`
 	margin-top: 0;
-	color: ${styleSystem.primaryCol};;
+	/* color: ${styleSystem.primaryColDarken2};*/
+	color: ${styleSystem.primaryCol};
 	font-size: 1.4rem;
 `;
 
 
 
-
 export const BodyInfo = styled(motion.div)`
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	margin-bottom: 2rem;
-	gap: 2rem;
+	width: 65%;
 
+`;
+
+export const BodyInfoDataRow = styled(motion.div)`
+	padding-top: 1rem;
+	width: 35%;
+	flex-direction: column;
+	display: flex;
+	gap: 2rem;
+	box-sizing: border-box;
 `;
 
 export const BodyInfoText = styled(motion.div)`
-	/* padding-right: 2rem; */
-	/* width: 50%; */
-	width: 60%;
-	p{
-		margin-top: 0;
-		width: 100%;
-	}
-	
+	color: ${styleSystem.primaryCol2};	
 `;
+
+
 
 export const BodyInfoData = styled.div`
 	display: flex;
 	flex-direction: column;
-	/* justify-content: space-between; */
-	/* width: 50%; */
+
 `;
 
-export const BodyInfoDataRow = styled(motion.div)`
-	width: 40%;
-	flex-direction: column;
-	display: flex;
-	gap: 2rem;
-	/* justify-content: space-between; */
-`;
+
 
 
 export const BodyInfoDataGroup = styled(motion.div)<BodyInfoDataGroupProps> `
@@ -214,6 +231,9 @@ export const BodyInfoDataBullet = styled(motion.div)<BulletsProps>`
 	display: inline-flex;
 	color:  ${styleSystem.primaryCol2};
 	cursor: default;
+	color: white;
+	font-size: .8rem;
+	letter-spacing: .05rem;
 
 	background: ${(props) => {
 	if (props.tagColor == 0) return '#3876BF';
@@ -242,8 +262,16 @@ export const BodyInfoDataValue = styled.div`
 
 
 export const BodyImgWrapper = styled(motion.div)`
-	/* background: #000; */
+	background: ${styleSystem.semiDark};
 	/* height: 20rem; */
 `
 
-
+export const IconBurgerBG = styled(motion.div)`
+	background: ${styleSystem.dark};red;
+	width: 6.5rem;
+	height: 6.5rem;
+	position: absolute;
+	top: 0rem;
+	right: 10vw;
+	z-index: 10;
+`
