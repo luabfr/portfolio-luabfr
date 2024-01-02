@@ -9,6 +9,7 @@ export const HeroTitleWrap = styled.section`
 	display: flex;
 	align-items: center;
 	box-sizing: border-box;
+	cursor: default;
 `;
 
 export const HeroTextWrap = styled.section`

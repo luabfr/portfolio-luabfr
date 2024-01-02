@@ -1,10 +1,55 @@
 import { FC } from 'react';
 import styled, { css } from "styled-components"
 import styleSystem from '../styleSystem';
-
 import { motion } from 'framer-motion';
+import AnimatedLetters from './AnimatedLetters';
+
+
+interface ToPortfolioProps {
+	onClick: () => void;
+}
+
+
+const DiamondWrap = styled(motion.div)`
+	/* background: red; */
+	/* background: ${styleSystem.dark}; */
+	width: 160px;
+	height: 105px;
+	position: absolute;
+	top: 0;
+	overflow: hidden;
+	right: 0;
+`
+
+const Diamond = styled(motion.div)`
+	background: ${styleSystem.dark};
+	/* background: darkred; */
+	transform: rotate(45deg);
+	width: 105px;
+	height: 105px;
+	position: absolute;
+	left: -110px; // start
+	transition: all .3s;
+`
+
+const Label = styled(motion.div)`
+	color:${styleSystem.primaryCol2};	
+	font-size: 2rem;
+	font-family: ${styleSystem.font1};	
+	position: absolute; 
+	right: 60%;
+	top: 50%;
+	transform: translate(0, -50%);
+	z-index: 900;
+	transition: all .3s;
+	opacity: 0;
+
+`
 
 const ToPortfolioWrapper = styled.div`
+	display: flex;
+	justify-content: flex-end;
+	/* background: olive; */
 	position: absolute;
 	bottom:4rem;
 	right: 11vw;
@@ -17,7 +62,7 @@ const ToPortfolioWrapper = styled.div`
 		transition: all .3s;
 	}
 
-	&:hover{
+	&:hover{		
 		svg, 
 		polygon{
 			stroke: ${styleSystem.primaryCol2};	;
@@ -27,12 +72,21 @@ const ToPortfolioWrapper = styled.div`
 			stroke: ${styleSystem.primaryCol2};	;
 		}
 
+		${Diamond}{
+			left: -16px; // end
+		}
+
+		${Label}{
+			opacity: 1;
+			right: 50%;
+		}
+
 	}
 `;
 
-interface ToPortfolioProps {
-	onClick: () => void;
-}
+
+
+
 
 export const ToPortfolio: FC<ToPortfolioProps> = ({ onClick }) => {
 
@@ -42,12 +96,19 @@ export const ToPortfolio: FC<ToPortfolioProps> = ({ onClick }) => {
 
 	return (
 		<ToPortfolioWrapper onClick={onClick}>
+			
+			<Label>PORTFOLIO</Label>
+
+			<DiamondWrap>
+				<Diamond />
+			</DiamondWrap>
+
 			<motion.svg 
 				width="154" 
 				height="104" 
 				xmlns="http://www.w3.org/2000/svg" 
 				transition={{ duration: .3 }} 
-				whileHover={{ scale: .9 }}>
+				whileHover={{  }}>
 				{/* Arco superior */}
 				<motion.path
 					d={arcPath1}

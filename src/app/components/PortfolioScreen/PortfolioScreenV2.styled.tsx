@@ -262,12 +262,12 @@ export const BodyInfoDataValue = styled.div`
 
 
 export const BodyImgWrapper = styled(motion.div)`
-	background: ${styleSystem.semiDark};
+	/* background: ${styleSystem.semiDark}; */
 	/* height: 20rem; */
 `
 
 export const IconBurgerBG = styled(motion.div)`
-	background: ${styleSystem.dark};red;
+	background: ${styleSystem.dark};
 	width: 6.5rem;
 	height: 6.5rem;
 	position: absolute;

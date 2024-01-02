@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import styleSystem from '../styleSystem';
-
+import Carousel from 'antd';
 import { motion } from 'framer-motion';
+import { Slider } from 'antd';
 
 export const AboutPortfolio = styled(motion.div)`
 	padding-right: 10vw;
@@ -11,6 +12,7 @@ export const AboutPortfolio = styled(motion.div)`
 	box-sizing: border-box;
 	width: 65vw;
 
+	cursor: default;
 
 	h2{
 		/* color: ${styleSystem.dark}; */
@@ -54,6 +56,7 @@ export const AboutPortfolio = styled(motion.div)`
 		font-size: 2rem;
 		/* color: ${styleSystem.dark}; */
 		color: ${styleSystem.primaryCol2};
+		margin: 4rem 0;
 		strong{
 			color: ${styleSystem.primaryCol};
 		}
@@ -74,8 +77,10 @@ export const Title = styled(motion.div)`
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	/* align-items: center; */
 	overflow: hidden;
+	text-transform: uppercase;
+	padding-left: 2rem;
 
 `
 
@@ -83,12 +88,14 @@ export const Title = styled(motion.div)`
 export const Wrapper = styled(motion.div)`
 	width: 100%;
 	height: 80vh;
-	padding: 2rem 2rem 8rem;
+	/* padding: 2rem 2rem 8rem; */
+	
+	padding: 2rem 2rem 8rem ;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	overflow-x: scroll;
+	/* overflow-x: scroll; */
 	scrollbar-width: thin;
 
 	&::-webkit-scrollbar {
@@ -101,5 +108,35 @@ export const Wrapper = styled(motion.div)`
 	::-webkit-scrollbar-thumb {
 		background-color: ${styleSystem.semiDark}; /* Color de la barra de desplazamiento */
 		border-radius: 4px; /* Borde redondeado para la barra */
+	}
+
+	.slick-dots-right{
+		inset-inline-end: 12px;
+	}
+
+	.slick-dots li button{
+		background: ${styleSystem.primaryCol};
+		opacity: .8;
+	}
+	.slick-dots li button:hover{
+		background: ${styleSystem.primaryCol};
+		opacity: 1;
+	}
+	.slick-dots li.slick-active button{
+		background: ${styleSystem.primaryCol2};
+	}
+
+`;
+
+
+
+export const SliderItem = styled(motion.div)`
+	height: 600px;
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	/* padding-right: 2rem; */
+	p{
+		padding: 0 4rem 0 0;
 	}
 `
