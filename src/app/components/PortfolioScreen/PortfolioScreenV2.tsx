@@ -4,6 +4,8 @@ import {
 	GridIndex, 
 	ProjectsTitle,
 	ProjectsAllProjects,
+	ShowList,
+	X,
 } from './PortfolioScreenV2.styled';
 import ProjectsIndexUL from './ProjectsIndexUL';
 import ProjectsContent from './ProjectsContent';
@@ -15,7 +17,10 @@ import { projectMarketFinder } from './_projects';
 import PortfolioHome from '../PortfolioHome/PortfolioHome';
 import { IconBurgerBG } from './PortfolioScreenV2.styled';
 
+
+
 const PortfolioScreenV2 = () =>{
+	const	[isShowListOpen, setIsShowListOpen] = useState(false)
 	const projectInView = useSelector((state: storeTypes) => state.uiStates.projectInView);
 	const dispatch = useDispatch();
 	// const projectInView = useSelector((state: storeTypes) => state.uiStates.projectInView);
@@ -36,6 +41,12 @@ const PortfolioScreenV2 = () =>{
 
 	const justForSecurityProject = projectMarketFinder
 
+		
+
+	const showListOpenHandler = ()=>{
+		setIsShowListOpen(!isShowListOpen)
+		console.log('click:', isShowListOpen)
+	}
 
 	return(
 		
@@ -48,10 +59,14 @@ const PortfolioScreenV2 = () =>{
 			<GridIndex>
 				<ProjectsTitle>					
 					<h1 onClick={() => goToView("PortfolioHome")}>Portfolio</h1>
-					<hr/>
+					<hr/>					
 				</ProjectsTitle>
 				
-				<ProjectsAllProjects>
+				<ProjectsAllProjects isOpen={isShowListOpen} onClick={showListOpenHandler}>
+					<ShowList isOpen={isShowListOpen}>
+						See Projects
+						<X isOpen={isShowListOpen} />
+					</ShowList>
 					{projects.map((project, index) => (
 						<ProjectsIndexUL
 							subtitle={project.category}

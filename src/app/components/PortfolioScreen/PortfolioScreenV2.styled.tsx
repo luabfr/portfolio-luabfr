@@ -19,6 +19,10 @@ export const Grid = styled.div`
 	display: flex;
 	flex-direction: row;
 	min-height: 100vh;
+
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+  }
 	
 `
 
@@ -46,6 +50,17 @@ export const GridIndex = styled.div`
 		width: 33%;
 		margin-left: 0;
 	}
+
+
+	@media screen and (max-width: 768px) {
+		width: 100vw;
+		height: unset;		
+		padding-bottom: 1rem;
+		padding-left: 0;
+		padding-right: 2rem;
+		margin-bottom: 2rem;
+  }
+
 `;
 
 export const ProjectsTitle = styled.div`
@@ -62,6 +77,17 @@ export const ProjectsTitle = styled.div`
 			color: ${styleSystem.primaryCol};
 		}
 	}
+
+	@media screen and (max-width: 768px) {
+		padding-top: 1.4rem;
+		height: unset;
+		margin-bottom: 1rem;
+		padding-left: 2rem;
+		h1{
+			font-size: 2rem;
+		}
+  }
+
 `;
 
 export const ProjectsAllProjects = styled.div`
@@ -80,7 +106,89 @@ export const ProjectsAllProjects = styled.div`
 		background-color: ${styleSystem.semiDark}; /* Color de la barra de desplazamiento */
 		border-radius: 4px; /* Borde redondeado para la barra */
 	}
+
+	@media screen and (max-width: 768px) {
+		height: 2rem;
+		transiton: all .1s;
+		position: absolute;
+		z-index: 900;
+		overflow-y: hidden;
+		width: 100%;
+		box-sizing: border-box;		
+		padding-left: 2rem;
+		padding-right: 2rem;
+
+
+		${(props) =>
+		props.isOpen && `
+			height: unset;
+			overflow-y: scroll;
+			background:  ${styleSystem.dark};
+			border-bottom: 2px solid  ${styleSystem.primaryCol};
+		`}
+
+  }
 `;
+
+
+export const ShowList = styled.button`
+	display: none;
+	@media screen and (max-width: 768px) {
+		width: 100%;
+		position: relative;
+		display: flex;
+		cursor: pointer;
+		background: unset;
+		border: none;
+		color: ${styleSystem.primaryCol2};
+		text-transform: uppercase;
+		padding: 0;
+		margin-bottom: 1rem;		
+		line-height: 2;
+		border-bottom: 2px solid ${styleSystem.semiDark};
+		&:hover{
+			 color: ${styleSystem.primaryCol};
+		}
+
+  }
+`
+
+export const X = styled.div`
+	display: none;
+	@media screen and (max-width: 768px) {
+		display: flex;
+		width: 1.2rem;
+		height: 1.2rem;
+		/* background: red;		 */
+		position: absolute;
+		right: 0;
+		transition: all .1s;
+
+		&::after{
+			position: absolute;
+			left: 45%;
+			content:"";
+			width: 2px;		
+			height: 1.2rem;	
+			background:${styleSystem.primaryCol};
+		}
+		&::before{
+			position: absolute;
+			top: 45%;
+			content:"";
+			width: 1.2rem;		
+			height: 2px;	
+			background:${styleSystem.primaryCol};
+		}
+
+		${(props) =>
+		props.isOpen && `
+			transform: rotate(45deg);
+		`}
+  }
+`
+
+
 
 export const ProjectsSubtitle = styled.h4`
 	color: ${styleSystem.primaryCol};
@@ -94,33 +202,8 @@ export const ProjectsName = styled.div`
 	cursor: pointer;
 	position: relative;
 	&:hover{
-		color: white;
-
-		/* &::after{
-			content:"";
-			width: 20px;
-			height: 20px;
-			position: absolute;
-			top: 5px;
-			right: -30px;
-			background: white;
-			transform: rotate(45deg);
-		} */
-		
+		color: white;	
 	}
-
-	/* &::after{
-		transition: all .5s;
-		content:"";
-		width: 20px;
-		height: 20px;
-		position: absolute;
-		top: 5px;
-		right: -60px;
-		background: white;
-		transform: rotate(45deg);
-	} */
-
 
 `;
 
@@ -155,8 +238,16 @@ export const GridContent = styled.div`
 	padding-top: 5rem;
 	padding-right: 10vw;
 	box-sizing: border-box;
-
 	font-family: ${styleSystem.font1};
+	box-sizing: border-box;
+
+	@media screen and (max-width: 768px) {
+		width: 100vw;
+		padding:  0 2rem 2rem 2rem;
+		overflow: unset;
+		height: unset;
+		
+  }
 `;
 
 
@@ -166,6 +257,11 @@ export const FirstRow = styled(motion.div)`
 	gap: 4rem;
 	box-sizing: border-box;
 	margin-bottom: 2rem;
+
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+		gap: 2rem;
+  }
 `;
 
 export const BodyName = styled(motion.h2)`
@@ -181,13 +277,15 @@ export const BodySubtitle = styled(motion.h3)`
 	font-size: 1.4rem;
 `;
 
-
-
 export const BodyInfo = styled(motion.div)`
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 2rem;
 	width: 65%;
+	@media screen and (max-width: 768px) {
+		width: 100%;	
+		margin-bottom: 0;
+  }
 
 `;
 
@@ -198,13 +296,15 @@ export const BodyInfoDataRow = styled(motion.div)`
 	display: flex;
 	gap: 2rem;
 	box-sizing: border-box;
+
+	@media screen and (max-width: 768px) {
+		width: 100%;	
+  }
 `;
 
 export const BodyInfoText = styled(motion.div)`
 	color: ${styleSystem.primaryCol2};	
 `;
-
-
 
 export const BodyInfoData = styled.div`
 	display: flex;
@@ -212,16 +312,18 @@ export const BodyInfoData = styled.div`
 
 `;
 
-
-
-
 export const BodyInfoDataGroup = styled(motion.div)<BodyInfoDataGroupProps> `
 	min-width: ${({ isFirst }) => (isFirst ? '30%' : '40%')}; 
 	box-sizing: border-box;
 	
 	/* ${({ isFirst }) => (isFirst ? 'text-align: right;' : '')};  */
-`;
 
+	@media screen and (max-width: 768px) {
+		min-width: 100%;	
+		width: 100%;
+  }
+	
+`;
 
 export const BodyInfoDataBullet = styled(motion.div)<BulletsProps>`
 	background: ${styleSystem.dark};
@@ -246,7 +348,6 @@ export const BodyInfoDataBullet = styled(motion.div)<BulletsProps>`
 
 `
 
-
 export const BodyInfoDataKey = styled.div`
 	color: ${styleSystem.primaryCol};
 	font-size: .75rem;
@@ -258,8 +359,6 @@ export const BodyInfoDataValue = styled.div`
 	color: ${styleSystem.semiDark};
 	margin-bottom: 1rem;
 `;
-
-
 
 export const BodyImgWrapper = styled(motion.div)`
 	/* background: ${styleSystem.semiDark}; */

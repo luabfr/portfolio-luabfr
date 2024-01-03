@@ -23,7 +23,6 @@ const AppView =()=>{
 	const inView = useSelector((state: storeTypes) => state.uiStates.inView);
 	const isMenuOpen = useSelector((state: storeTypes) => state.uiStates.isMenuOpen);
 	
-	console.log('uiStates X ', uiStates)
 
 
 	const handleBurguerMenu = () => {

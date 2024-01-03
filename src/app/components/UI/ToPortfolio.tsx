@@ -52,7 +52,7 @@ const ToPortfolioWrapper = styled.div`
 	/* background: olive; */
 	position: absolute;
 	bottom:4rem;
-	right: 11vw;
+	right: 10vw;
 	z-index: 99;
 	cursor: pointer;
 
@@ -82,6 +82,10 @@ const ToPortfolioWrapper = styled.div`
 		}
 
 	}
+
+	@media screen and (max-width: 768px) {
+    right: 2rem;
+  }
 `;
 
 

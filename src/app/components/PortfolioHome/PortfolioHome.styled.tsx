@@ -11,7 +11,6 @@ export const AboutPortfolio = styled(motion.div)`
 	background: ${styleSystem.dark};
 	box-sizing: border-box;
 	width: 65vw;
-
 	cursor: default;
 
 	h2{
@@ -68,6 +67,14 @@ export const AboutPortfolio = styled(motion.div)`
 		}		
 	}
 
+	@media screen and (max-width: 768px) {
+		width: 100vw;
+		padding: 0;
+		h2{
+			margin: 0 0;
+		}
+  }
+
 `
 
 export const Title = styled(motion.div)`
@@ -81,6 +88,11 @@ export const Title = styled(motion.div)`
 	overflow: hidden;
 	text-transform: uppercase;
 	padding-left: 2rem;
+	@media screen and (max-width: 768px) {
+		height: unset;
+		padding: 0 2rem;
+		
+  }
 
 `
 
@@ -126,6 +138,13 @@ export const Wrapper = styled(motion.div)`
 		background: ${styleSystem.primaryCol2};
 	}
 
+
+
+	@media screen and (max-width: 768px) {
+		height: unset;
+		padding: 1rem 1rem 1rem 2rem;
+  }
+
 `;
 
 
@@ -135,8 +154,17 @@ export const SliderItem = styled(motion.div)`
 	display: flex !important;
 	justify-content: center;
 	align-items: center;
-	/* padding-right: 2rem; */
+	
 	p{
 		padding: 0 4rem 0 0;
 	}
+
+	@media screen and (max-width: 768px) {
+		height: 400px;
+		p{
+			padding: 0 3rem 0 0;
+			margin: 0;
+			font-size: 1.6rem;
+		}
+  }
 `

@@ -42,7 +42,7 @@ export const UiRect = styled(motion.div)`
 export const BurguerUIWrapper = styled(motion.div)`
 	position: absolute;
 	z-index: 1000;
-	right: 11vw;
+	right: 10vw;
 	top: 1rem;
 
 	&:hover{
@@ -50,6 +50,10 @@ export const BurguerUIWrapper = styled(motion.div)`
 			opacity: .8;
 		}
 	}
+
+	@media screen and (max-width: 768px) {
+    right: 2rem;
+  }
 `;
 
 
@@ -85,7 +89,7 @@ export const stick2 = {
 	burguer: {
 		rotate: ["-40deg", "-40deg", "0deg", "0deg"],
 		y: ["0rem", "0rem", ".5rem", ".5rem"],
-		width: "3rem"
+		width: "4rem"
 	}
 }
 
@@ -121,7 +125,7 @@ export const stick4 = {
 	burguer: {
 		rotate: ["-40deg", "-40deg", "0deg", "0deg"],
 		y: ["0rem", "0rem", "-.5rem", "-.5rem"],
-		width: "3rem"
+		width: "4rem"
 	}
 }
 

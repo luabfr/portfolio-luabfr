@@ -10,7 +10,7 @@ export const MenuBG = styled(motion.div)`
 	width: 100vw;
 	height: 100vh;
 	background: ${styleSystem.primaryCol2};
-	z-index: 100;
+	z-index: 1000;
 	display:flex ;
 	justify-content: center;
 
@@ -35,6 +35,9 @@ export const MenuLI = styled(motion.div)<MenuLITS>`
 	cursor: pointer;
 	text-transform: uppercase;
 	/* transition: all .3s; */
+	@media screen and (max-width: 768px) {
+    font-size: 3em;
+  }
 	
 
 `;
@@ -43,6 +46,10 @@ export const MenuHR = styled(motion.div)`
 	background: ${styleSystem.primaryCol};
 	height: 4px;
 	width: 10rem;
+	@media screen and (max-width: 768px) {
+  	height: 2px;
+		width: 4rem;
+  }
 `;
 
 

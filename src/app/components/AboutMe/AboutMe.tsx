@@ -10,6 +10,12 @@ export const AboutWrapper = styled.div`
 		margin-bottom: 0;
 		font-size: 1.6rem;
 	}
+
+	@media screen and (max-width: 768px) {
+		padding-top: 1.4rem;
+		padding-left: 2rem;
+  }
+
 `
 
 export const AboutH1 = styled.h1`
@@ -17,6 +23,12 @@ export const AboutH1 = styled.h1`
 	color: ${styleSystem.primaryCol2};
 	margin-bottom: 0;
 	text-transform: uppercase;
+
+	@media screen and (max-width: 768px) {
+		font-size: 2rem;
+		margin-top: 0;
+  }
+
 `
 
 export const Line = styled.div`
@@ -25,6 +37,12 @@ export const Line = styled.div`
 	height: 4px;
 	background: ${styleSystem.semiDark};
 	margin-bottom: 4rem;
+	@media screen and (max-width: 768px) {
+		margin-bottom: 2rem;
+		margin-top: 1rem;
+		width: 5rem;
+		height: 2px;
+	}
 
 `
 
@@ -42,6 +60,9 @@ export const ItemsGroup = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
+	@media screen and (max-width: 768px) {
+		gap: 2rem;
+	}
 `
 
 export const AboutH2 = styled.h2`
@@ -50,17 +71,27 @@ export const AboutH2 = styled.h2`
 	strong{
 		color: ${styleSystem.primaryCol2};
 	}
+
+	@media screen and (max-width: 768px) {
+		font-size: 1.8rem;		
+		margin: 5rem 0;
+	}
 `
 
 export const ContentItem = styled.div`
 	margin-bottom: 4rem;
-	/* flex: 1; */
 	font-size: 1.4rem;
 
+	@media screen and (max-width: 768px) {
+		font-size: 1.2rem;
+	}
 `
 
 export const AboutH3 = styled.h3`
 	font-size: 1.8rem;
+	@media screen and (max-width: 768px) {
+		font-size: 1.2rem;
+	}
 `
 
 
