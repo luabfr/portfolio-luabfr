@@ -15,6 +15,12 @@ interface BodyInfoDataGroupProps{
 	isFirst?: boolean
 }
 
+
+interface IsOpenProps {
+	isOpen?: boolean;
+}
+
+
 export const Grid = styled.div`
 	display: flex;
 	flex-direction: row;
@@ -90,7 +96,7 @@ export const ProjectsTitle = styled.div`
 
 `;
 
-export const ProjectsAllProjects = styled.div`
+export const ProjectsAllProjects = styled.div<IsOpenProps>`
 	height: 75vh;
 	overflow-y: auto;
 	scrollbar-width: thin;
@@ -153,7 +159,7 @@ export const ShowList = styled.button`
   }
 `
 
-export const X = styled.div`
+export const X = styled.div<IsOpenProps>`
 	display: none;
 	@media screen and (max-width: 768px) {
 		display: flex;
