@@ -63,7 +63,7 @@ const PortfolioScreenV2 = () =>{
 				</ProjectsTitle>
 				
 				<ProjectsAllProjects isOpen={isShowListOpen} onClick={showListOpenHandler}>
-					<ShowList isOpen={isShowListOpen}>
+					<ShowList >
 						See Projects
 						<X isOpen={isShowListOpen} />
 					</ShowList>
