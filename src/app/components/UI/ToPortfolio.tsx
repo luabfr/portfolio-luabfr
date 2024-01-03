@@ -2,7 +2,6 @@ import { FC } from 'react';
 import styled, { css } from "styled-components"
 import styleSystem from '../styleSystem';
 import { motion } from 'framer-motion';
-import AnimatedLetters from './AnimatedLetters';
 
 
 interface ToPortfolioProps {
@@ -11,8 +10,6 @@ interface ToPortfolioProps {
 
 
 const DiamondWrap = styled(motion.div)`
-	/* background: red; */
-	/* background: ${styleSystem.dark}; */
 	width: 160px;
 	height: 105px;
 	position: absolute;
@@ -23,7 +20,6 @@ const DiamondWrap = styled(motion.div)`
 
 const Diamond = styled(motion.div)`
 	background: ${styleSystem.dark};
-	/* background: darkred; */
 	transform: rotate(45deg);
 	width: 105px;
 	height: 105px;
