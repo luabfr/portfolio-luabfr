@@ -416,7 +416,7 @@ export const IconBurgerBG = styled(motion.div)`
 	height: 6.5rem;
 	position: absolute;
 	top: 0rem;
-	right: 10vw;
+	right: 9vw;
 	z-index: 10;
 	@media screen and (max-width: 1200px) {
   	right: 1rem;
