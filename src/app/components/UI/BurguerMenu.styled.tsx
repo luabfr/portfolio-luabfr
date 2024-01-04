@@ -51,6 +51,9 @@ export const BurguerUIWrapper = styled(motion.div)`
 		}
 	}
 
+	@media screen and (max-width: 1200px) {
+    right: 2rem;
+  }
 	@media screen and (max-width: 768px) {
     right: 2rem;
   }

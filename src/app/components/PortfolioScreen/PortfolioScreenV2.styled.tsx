@@ -57,6 +57,10 @@ export const GridIndex = styled.div`
 		margin-left: 0;
 	}
 
+	@media screen and (max-width: 1200px) {
+    padding-left: 2rem;
+		
+  }
 
 	@media screen and (max-width: 768px) {
 		width: 100vw;
@@ -83,6 +87,11 @@ export const ProjectsTitle = styled.div`
 			color: ${styleSystem.primaryCol};
 		}
 	}
+
+	@media screen and (max-width: 1200px) {
+		padding-top: 1.4rem;
+		height: unset;
+  }
 
 	@media screen and (max-width: 768px) {
 		padding-top: 1.4rem;
@@ -247,6 +256,14 @@ export const GridContent = styled.div`
 	font-family: ${styleSystem.font1};
 	box-sizing: border-box;
 
+	@media screen and (max-width: 1200px) {    
+		padding-right: 2rem;	
+		padding-top: 2rem;
+		width: 100vw;
+		overflow: unset;
+		height: unset;
+  }
+
 	@media screen and (max-width: 768px) {
 		width: 100vw;
 		padding:  0 2rem 2rem 2rem;
@@ -264,6 +281,10 @@ export const FirstRow = styled(motion.div)`
 	box-sizing: border-box;
 	margin-bottom: 2rem;
 
+	@media screen and (max-width: 1200px) {
+    flex-direction: column;
+		gap: 2rem;
+  }
 	@media screen and (max-width: 768px) {
 		flex-direction: column;
 		gap: 2rem;
@@ -274,6 +295,11 @@ export const BodyName = styled(motion.h2)`
 	margin: 0;
 	font-size: 2.4rem;
 	color: ${styleSystem.primaryCol2};
+
+	@media screen and (max-width: 1200px) {
+    padding-right: 6rem;
+  }
+
 `;
 
 export const BodySubtitle = styled(motion.h3)`
@@ -281,6 +307,9 @@ export const BodySubtitle = styled(motion.h3)`
 	/* color: ${styleSystem.primaryColDarken2};*/
 	color: ${styleSystem.primaryCol};
 	font-size: 1.4rem;
+	@media screen and (max-width: 1200px) {
+    padding-right: 6rem;
+  }
 `;
 
 export const BodyInfo = styled(motion.div)`
@@ -288,6 +317,12 @@ export const BodyInfo = styled(motion.div)`
 	flex-direction: column;
 	margin-bottom: 2rem;
 	width: 65%;
+
+	@media screen and (max-width: 1200px) {
+    	width: 100%;	
+			margin-bottom: 0;
+  }
+
 	@media screen and (max-width: 768px) {
 		width: 100%;	
 		margin-bottom: 0;
@@ -303,6 +338,10 @@ export const BodyInfoDataRow = styled(motion.div)`
 	gap: 2rem;
 	box-sizing: border-box;
 
+	@media screen and (max-width: 1200px) {
+    flex-direction: row;
+		width: 100%;
+  }
 	@media screen and (max-width: 768px) {
 		width: 100%;	
   }
@@ -379,4 +418,7 @@ export const IconBurgerBG = styled(motion.div)`
 	top: 0rem;
 	right: 10vw;
 	z-index: 10;
+	@media screen and (max-width: 1200px) {
+  	right: 1rem;
+  }
 `

@@ -19,6 +19,11 @@ export const ContactWrapper = styled.div`
 	color: ${styleSystem.primaryCol};
 	padding: 2rem 10vw 6rem;
 	background: ${styleSystem.semiDark};
+
+	@media screen and (max-width: 1200px) {
+    padding: 1.4rem 2rem 4rem;
+  }
+
 	@media screen and (max-width: 768px) {
 		padding-top: 1.4rem;
 		padding-left: 2rem;
@@ -31,6 +36,10 @@ export const ContactH1 = styled.h1`
 	margin-bottom: 0;
 	text-transform: uppercase;
 
+	@media screen and (max-width: 1200px) {
+  	margin-top: 0;
+		font-size: 3rem;
+  }
 	@media screen and (max-width: 768px) {
 		font-size: 2rem;
 		margin-top: 0;
@@ -45,6 +54,10 @@ export const Line = styled.div`
 	background: ${styleSystem.primaryCol};
 	margin-bottom: 4rem;
 
+	@media screen and (max-width: 1200px) {
+  	width: 5rem;
+		height: 2px;
+  }
 	@media screen and (max-width: 768px) {
 		width: 5rem;
 		height: 2px;		
@@ -66,6 +79,11 @@ export const ContentWrap = styled.div`
 	height: inherit;
 	align-items: center;
 
+	@media screen and (max-width: 1200px) {
+  	gap: 2rem;
+		
+  }
+
 	@media screen and (max-width: 768px) {
 		flex-direction: column;
 		align-items: flex-start;
@@ -76,8 +94,6 @@ export const DivL = styled.div`
 	flex: 1;
 	@media screen and (max-width: 768px) {
 		border-bottom: 2px solid ${styleSystem.primaryCol};
-
-
   }
 `
 
@@ -89,11 +105,15 @@ export const ContentItem = styled.div`
 	font-size: 2rem;
 	color: ${styleSystem.primaryCol};
 	margin-bottom: 2rem;
+
 `
 
 
 export const Key = styled.div`
 
+	@media screen and (max-width: 1200px) {
+  	font-size: 1.4rem;
+  }
 	@media screen and (max-width: 768px) {
 		font-size: 1.6rem;
   }
@@ -113,6 +133,9 @@ export const Value = styled.div`
 			margin-left: 10px;
 		}
 	}
+	@media screen and (max-width: 1200px) {
+  	font-size: 2rem;
+  }
 	@media screen and (max-width: 768px) {
 		font-size: 2rem;
   }
@@ -128,9 +151,9 @@ const FindMeOn = () => {
 		<ContactWrapper>
 			<TitleWrap>
 				<ContactH1>
-					<Key>
+					{/* <Key> */}
 						Find Me On
-					</Key>
+					{/* </Key> */}
 				</ContactH1>
 				<Line />
 			</TitleWrap>

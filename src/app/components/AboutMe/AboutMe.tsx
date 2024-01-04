@@ -11,6 +11,10 @@ export const AboutWrapper = styled.div`
 		font-size: 1.6rem;
 	}
 
+	@media screen and (max-width: 1200px) {
+    padding: 1.4rem 2rem 4rem;
+  }
+	
 	@media screen and (max-width: 768px) {
 		padding-top: 1.4rem;
 		padding-left: 2rem;
@@ -24,6 +28,10 @@ export const AboutH1 = styled.h1`
 	margin-bottom: 0;
 	text-transform: uppercase;
 
+	@media screen and (max-width: 1200px) {
+  	margin-top: 0;
+		font-size: 3rem;
+  }
 	@media screen and (max-width: 768px) {
 		font-size: 2rem;
 		margin-top: 0;
@@ -37,6 +45,11 @@ export const Line = styled.div`
 	height: 4px;
 	background: ${styleSystem.semiDark};
 	margin-bottom: 4rem;
+
+	@media screen and (max-width: 1200px) {
+  	width: 5rem;
+		height: 2px;
+  }
 	@media screen and (max-width: 768px) {
 		margin-bottom: 2rem;
 		margin-top: 1rem;

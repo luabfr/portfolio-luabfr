@@ -33,7 +33,7 @@ const ProjectsIndexUL: FC<ProjectsIndexULProps> = ({ subtitle, projectsName, ulI
 	return(
 		<ProjectsUL
 			initial={{ opacity: 0, y: "-1rem" }}
-			whileInView={{ opacity: 1, y: "0rem" }}
+			animate={{ opacity: 1, y: "0rem" }}
 			transition={{ duration: 1, delay: ulIndex / 5 }}>
 			<ProjectsSubtitle>
 				{subtitle}
@@ -42,7 +42,7 @@ const ProjectsIndexUL: FC<ProjectsIndexULProps> = ({ subtitle, projectsName, ulI
 			{projectsName.map((projectName, index) => (
 				<ProjectsLI key={index}
 					initial={{ opacity: 0, x: "-1rem" }}
-					whileInView={{ opacity: 1, x: "0rem" }}
+					animate={{ opacity: 1, x: "0rem" }}
 					transition={{ duration: 1, delay: index/5 }}>
 					<ProjectsName onClick={() => goToView(projectName)}>
 						{projectName}

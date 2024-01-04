@@ -7,7 +7,6 @@ import { Slider } from 'antd';
 export const AboutPortfolio = styled(motion.div)`
 	padding-right: 10vw;
 	font-family: ${styleSystem.font1};
-	/* background: ${styleSystem.light}; */
 	background: ${styleSystem.dark};
 	box-sizing: border-box;
 	width: 65vw;
@@ -67,6 +66,10 @@ export const AboutPortfolio = styled(motion.div)`
 		}		
 	}
 
+	@media screen and (max-width: 1200px) {
+    padding-right: 0;
+  }
+
 	@media screen and (max-width: 768px) {
 		width: 100vw;
 		padding: 0;
@@ -88,6 +91,10 @@ export const Title = styled(motion.div)`
 	overflow: hidden;
 	text-transform: uppercase;
 	padding-left: 2rem;
+
+	@media screen and (max-width: 1200px) {
+		padding-top: 1.4rem;
+  }
 	@media screen and (max-width: 768px) {
 		height: unset;
 		padding: 0 2rem;
@@ -157,8 +164,16 @@ export const SliderItem = styled(motion.div)`
 	
 	p{
 		padding: 0 4rem 0 0;
+		text-align: center ;
 	}
 
+	@media screen and (max-width: 1200px) {
+    height: 400px;
+		p{
+			font-size: 1.6rem;
+		}
+  }
+	
 	@media screen and (max-width: 768px) {
 		height: 400px;
 		p{

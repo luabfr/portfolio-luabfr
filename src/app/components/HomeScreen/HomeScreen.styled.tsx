@@ -28,6 +28,9 @@ export const STH1 = styled.h1`
 	margin: 0;
 	line-height: 1;
 
+	@media screen and (max-width: 1200px) {
+    font-size: 5em;
+  }
 	@media screen and (max-width: 768px) {
     font-size: 3em;
   }
@@ -39,6 +42,10 @@ export const STH2 = styled.h2`
 	font-weight: 300;
   color: ${styleSystem.primaryCol};
 	margin: 0;
+
+	@media screen and (max-width: 1200px) {
+    font-size: 4em;
+  }
 	@media screen and (max-width: 768px) {
     font-size: 2em;
   }

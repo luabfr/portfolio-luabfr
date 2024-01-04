@@ -35,6 +35,10 @@ export const MenuLI = styled(motion.div)<MenuLITS>`
 	cursor: pointer;
 	text-transform: uppercase;
 	/* transition: all .3s; */
+
+	@media screen and (max-width: 1200px) {
+    font-size: 3em;
+  }
 	@media screen and (max-width: 768px) {
     font-size: 3em;
   }
