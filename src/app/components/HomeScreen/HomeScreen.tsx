@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { HeroTitleWrap, HeroTextWrap, STH2, CustomHR, STH1 } from "./HomeScreen.styled";
 import TextReplacer from "../TextReplacer/TextReplacer";
 
-
 const texts1 = ['UX/UI', 'Interfaces', 'Multimedial', 'Frontend', ];
 const texts2 = ['Developer', 'Designer', 'Craftman'];
 

@@ -299,6 +299,9 @@ export const BodyName = styled(motion.h2)`
 	@media screen and (max-width: 1200px) {
     padding-right: 6rem;
   }
+	@media screen and (max-width: 768px) {
+		padding-right: 0;
+  }
 
 `;
 
@@ -309,6 +312,9 @@ export const BodySubtitle = styled(motion.h3)`
 	font-size: 1.4rem;
 	@media screen and (max-width: 1200px) {
     padding-right: 6rem;
+  }
+	@media screen and (max-width: 768px) {
+		padding-right: 0;
   }
 `;
 
