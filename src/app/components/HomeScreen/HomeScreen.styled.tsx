@@ -5,7 +5,7 @@ import styleSystem from "../styleSystem";
 
 export const HeroTitleWrap = styled.section`
   padding: 4em 10vw;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	box-sizing: border-box;

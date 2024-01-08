@@ -25,6 +25,7 @@ export const Grid = styled.div`
 	display: flex;
 	flex-direction: row;
 	min-height: 100vh;
+	/* position: relative; */
 
 	@media screen and (max-width: 768px) {
 		flex-direction: column;
@@ -74,8 +75,9 @@ export const GridIndex = styled.div`
 `;
 
 export const ProjectsTitle = styled.div`
-	height: 25vh;
-	padding-top: 4rem;
+	height: 6rem;
+	padding-top: 2rem;
+	margin-bottom: 2rem;
 	box-sizing: border-box;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -106,7 +108,7 @@ export const ProjectsTitle = styled.div`
 `;
 
 export const ProjectsAllProjects = styled.div<IsOpenProps>`
-	height: 75vh;
+	/* min-height: 75vh; */
 	overflow-y: auto;
 	scrollbar-width: thin;
 	
@@ -418,9 +420,10 @@ export const BodyImgWrapper = styled(motion.div)`
 
 export const IconBurgerBG = styled(motion.div)`
 	background: ${styleSystem.dark};
-	width: 6.5rem;
+	/* background: red; */
+	width: 7rem;
 	height: 6.5rem;
-	position: absolute;
+	position: fixed;
 	top: 0rem;
 	right: 9vw;
 	z-index: 10;

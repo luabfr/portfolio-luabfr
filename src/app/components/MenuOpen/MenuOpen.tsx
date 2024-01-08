@@ -51,7 +51,7 @@ const MenuOpen: FC = () => {
 					whileHover={{ x: 10, color: "#192231" }}
 					whileInView={inViewStatesLI}
 					onClick={() => goToView("portfolio")}>
-					Portfolio
+					PROJECTS
 				</MenuLI>
 				<MenuHR 
 					initial={{ opacity: 0, x: "5rem" }}

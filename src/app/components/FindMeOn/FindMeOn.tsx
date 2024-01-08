@@ -14,7 +14,7 @@ export const ContactWrapper = styled.div`
 	display: flex;
   flex-direction: column;
 	width: 100vw;
-	height: 100vh;
+	min-height: 100vh;
 	font-family: ${styleSystem.font1};
 	color: ${styleSystem.primaryCol};
 	padding: 2rem 10vw 6rem;

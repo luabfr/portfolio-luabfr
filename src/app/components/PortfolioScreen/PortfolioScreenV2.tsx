@@ -58,13 +58,13 @@ const PortfolioScreenV2 = () =>{
 			{/* Projects Index */}
 			<GridIndex>
 				<ProjectsTitle>					
-					<h1 onClick={() => goToView("PortfolioHome")}>Portfolio</h1>
+					<h1 onClick={() => goToView("PortfolioHome")}>Projects</h1>
 					<hr/>					
 				</ProjectsTitle>
 				
 				<ProjectsAllProjects isOpen={isShowListOpen} onClick={showListOpenHandler}>
 					<ShowList >
-						See Projects
+						Show Projects List
 						<X isOpen={isShowListOpen} />
 					</ShowList>
 					{projects.map((project, index) => (

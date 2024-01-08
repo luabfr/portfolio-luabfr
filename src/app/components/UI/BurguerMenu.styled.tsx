@@ -40,7 +40,7 @@ export const UiRect = styled(motion.div)`
 
 
 export const BurguerUIWrapper = styled(motion.div)`
-	position: absolute;
+	position: fixed;
 	z-index: 1000;
 	right: 10vw;
 	top: 1rem;

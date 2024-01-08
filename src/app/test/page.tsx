@@ -1,7 +1,7 @@
 "use client"
 import styled from "styled-components"
 import AnimatedOrbit from "./AnimatedOrbit/AnimatedOrbit"
-import { useScroll } from "framer-motion"
+import AnimatedTextScroll from "./AnimatedTextScroll/AnimatedTextScroll"
 
 const Container = styled.div`
 	width: 100vw;
@@ -34,7 +34,6 @@ const Section3 = styled(Section)`
 const TestPage = () => {
 
 
-
 	return(
 		<Container>
 			<Section>
@@ -42,12 +41,16 @@ const TestPage = () => {
 			</Section>
 
 		 	<Section2>
-				<h2>Section2 2</h2>
+				<h2>Section 2</h2>
 			</Section2>
 
 			<Section3>
-				
+				<AnimatedTextScroll/>
 			</Section3>
+
+			<Section2>
+				<h2>Section 4</h2>
+			</Section2>
 
 		</Container>	
 	)
