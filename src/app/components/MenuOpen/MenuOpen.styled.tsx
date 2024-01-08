@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 
 export const MenuBG = styled(motion.div)`
-	position: absolute;
+	position: fixed;
 	top: -100vh;
 	left:0;
 	width: 100vw;
@@ -13,6 +13,7 @@ export const MenuBG = styled(motion.div)`
 	z-index: 1000;
 	display:flex ;
 	justify-content: center;
+	/* overflow: hidden; */
 
 `
 

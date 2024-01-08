@@ -18,6 +18,7 @@ export const AboutPortfolio = styled(motion.div)`
 		font-size: 2.4rem;
 		font-family: ${styleSystem.font1};
 		margin-top: .7rem;
+		margin-bottom: 0;
 	}
 	hr{
 		height: 2px;
@@ -82,8 +83,8 @@ export const AboutPortfolio = styled(motion.div)`
 
 export const Title = styled(motion.div)`
 	width: 100%;
-	height: 20vh;
-	padding-top: 4rem;
+	height: 6rem;
+	padding-top: 2rem;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
@@ -106,10 +107,10 @@ export const Title = styled(motion.div)`
 
 export const Wrapper = styled(motion.div)`
 	width: 100%;
-	height: 80vh;
+	min-height: 80vh;
 	/* padding: 2rem 2rem 8rem; */
 	
-	padding: 2rem 2rem 8rem ;
+	padding: 2rem 2rem 4rem ;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;

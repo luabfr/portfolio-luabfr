@@ -1,6 +1,7 @@
 "use client"
 import styled from "styled-components"
 import styleSystem from "../styleSystem"
+import { IconBurgerBG } from "../PortfolioScreen/PortfolioScreenV2.styled"
 
 export const AboutWrapper = styled.div`
 	font-family: ${styleSystem.font1};
@@ -122,7 +123,7 @@ const AboutMe = () => {
 
 	return(
 		<AboutWrapper>
-
+			<IconBurgerBG/>
 			<TitleWrap>
 				<AboutH1>
 					About Me
