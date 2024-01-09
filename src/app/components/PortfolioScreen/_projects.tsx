@@ -104,7 +104,7 @@ const projectAnotadorDeTruco = {
 		hasFigma: "https://www.figma.com/file/GmXVDOZVmEeVtjiJjvZqtS/APP-Truco-Anotador%3A-UI",
 		hasFigmaPrototype: "https://www.figma.com/proto/GmXVDOZVmEeVtjiJjvZqtS/APP-Truco-Anotador%3A-UI?type=design&node-id=0-1&t=EOVWU91XXSg7u3HI-0&scaling=scale-down&page-id=0%3A1",
 		hasUX:"https://www.figma.com/file/oUxMmQZz0LLYyG0940PSYZ/APP-Truco-Anotador%3A-Benchmark?type=whiteboard&node-id=0-1&t=FGSU6WGELfY4h65H-0",
-		hasUrl: "https://play.google.com/store/games"
+		hasUrl: "https://play.google.com/store/apps/details?id=com.luabfr.anotadordetruco"
 	}
 }
 
