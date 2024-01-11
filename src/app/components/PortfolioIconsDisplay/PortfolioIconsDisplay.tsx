@@ -13,11 +13,15 @@ import {
 	IconFigmaProto,
 	IconYoutubeColor,
 	IconPDF,
+	IconPlayStore,
+	IconGithubName,
 } from "../Icons/Icons"
 import { ProjectsContentProps } from "../PortfolioScreen/PortfolioInterfaces"
 import styled from "styled-components";
 import Link from "next/link";
 import styleSystem from "../styleSystem";
+import { Button, Divider, Space, Tooltip } from 'antd';
+
 
 interface ProjectComponentProps {
 	links?: ProjectsContentProps['thisProject']['links'];
@@ -44,6 +48,9 @@ const Div =styled.div`
 	display: flex;
 	align-items: center;
 	padding-top: 6px;
+	*{
+		font-family: ${styleSystem.font1};
+	}
 `
 
 const PortfolioIconsDisplay: FC<ProjectComponentProps> = ({ links })=>{
@@ -51,48 +58,83 @@ const PortfolioIconsDisplay: FC<ProjectComponentProps> = ({ links })=>{
 		<div>
 			{links && (
 				<Div>
+					{links.hasPlayStore &&
+						<Tooltip title="Go to Play Store" color={"black"} >
+          		<A href={links.hasPlayStore} target="_blank">
+								<IconPlayStore />
+							</A>
+						</Tooltip>
+					}
 					{links.hasUrl && 
-						<A href={links.hasUrl}  target="_blank">
-							<IconOpen />
-						</A>
+						<Tooltip title="Go to link" color={"black"} >
+							<A href={links.hasUrl}  target="_blank">
+								<IconOpen />
+							</A>
+						
+						</Tooltip>
 					}
 					{links.hasGit && 
-						<A href={links.hasGit} target="_blank">
-							<IconGitColor/>
-						</A>
+						<Tooltip title="See GitHub's code" color={"black"} >
+							<A href={links.hasGit} target="_blank">
+								<IconGithubName />
+							</A>
+						
+						</Tooltip>
 					}
 					{links.hasFigma && 
-						<A href={links.hasFigma} target="_blank">
-							<IconFigmaColor/>
-						</A>}
+						<Tooltip title="See Figma's project" color={"black"} >
+							<A href={links.hasFigma} target="_blank">
+								<IconFigmaColor/>
+							</A>
+						
+						</Tooltip >
+					}
 					{links.hasFigmaPrototype && 
-						<A href={links.hasFigmaPrototype} target="_blank">
-							<IconFigmaProto/>
-						</A>
+						<Tooltip title="See Figma's Prototype" color={"black"} >
+							<A href={links.hasFigmaPrototype} target="_blank">
+								<IconFigmaProto/>
+							</A>
+						
+						</Tooltip >
 						}
 					{links.hasUX && 
-						<A href={links.hasUX} target="_blank">
-							<IconUxCircle/>
-						</A>
+						<Tooltip title="See UX Research" color={"black"} >
+							<A href={links.hasUX} target="_blank">
+								<IconUxCircle/>
+							</A>
+						
+						</Tooltip >
 					}
 					{links.hasVimeo && 
-						<A href={links.hasVimeo} target="_blank">
-							<IconVimeoColor/>
-						</A>
+						<Tooltip title="Go to Vimeo" color={"black"} >
+							<A href={links.hasVimeo} target="_blank">
+								<IconVimeoColor/>
+							</A>
+						
+						</Tooltip>
 					}
 					{links.hasYoutube && 
-						<A href={links.hasYoutube} target="_blank">
-							<IconYoutubeColor/>
-						</A>
+						<Tooltip title="Go to YouTube" color={"black"} >
+							<A href={links.hasYoutube} target="_blank">
+								<IconYoutubeColor/>
+							</A>
+						
+						</Tooltip>
 					}
 					{links.hasSpotify && 
-						<A href={links.hasSpotify} target="_blank">
-							<IconSpotifyColor/>
-						</A>}
+						<Tooltip title="Go to Spotify" color={"black"} >
+							<A href={links.hasSpotify} target="_blank">
+								<IconSpotifyColor/>
+							</A>
+						
+						</Tooltip>}
 					{links.hasPDF && 
-						<A href={links.hasPDF} target="_blank">
-							<IconPDF/>
-						</A>
+						<Tooltip title="See PDF" color={"black"} >
+							<A href={links.hasPDF} target="_blank">
+								<IconPDF/>
+							</A>
+						
+						</Tooltip>
 					}
 				</Div>
 			)}

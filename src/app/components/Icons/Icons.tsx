@@ -19,13 +19,14 @@ import vimeoColor from "../../../../public/icons/vimeo-color.svg";
 import youtubeColor from "../../../../public/icons/youtube-color.svg";
 import pdf from "../../../../public/icons/pdf.svg";
 
-
 import whatsapp from "../../../../public/icons/whatsapp.svg";
 import email1 from "../../../../public/icons/email1.svg";
 import email2 from "../../../../public/icons/email2.svg";
 import github from "../../../../public/icons/github.svg";
+import githubName from "../../../../public/icons/github-name.svg";
 import linkedin from "../../../../public/icons/linkedin.svg";
-
+import playstore from "../../../../public/icons/playstore-color.svg";
+	
 
 
 
@@ -33,6 +34,33 @@ interface IconTypes{
 	width?:number,
 	height?: number
 }
+
+export const IconPlayStore: FC<IconTypes> = ({ width, height }) => {
+	return (
+		<Image
+			priority
+			width={width == undefined ? "30" : width}
+			height={height == undefined ? "30" : height}
+			src={playstore}
+			alt="Play Store App"
+		/>
+	)
+}
+
+
+
+export const IconGithubName: FC<IconTypes> = ({ width, height }) => {
+	return (
+		<Image
+			priority
+			width={width == undefined ? "30" : width}
+			height={height == undefined ? "30" : height}
+			src={githubName}
+			alt="github"
+		/>
+	)
+}
+
 
 export const IconGithub: FC<IconTypes> = ({ width, height }) => {
 	return (

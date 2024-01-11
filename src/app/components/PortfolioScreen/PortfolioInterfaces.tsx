@@ -20,6 +20,7 @@ export interface ProjectsContentProps {
 			hasYoutube?: string,
 			hasSpotify?: string,
 			hasPDF?: string,
+			hasPlayStore?: string
 		}
 	}
 }
