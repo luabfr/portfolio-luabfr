@@ -1,3 +1,34 @@
+/* MOCK
+* *************/
+/*
+const projectInfo = {
+	projectName: string,
+	projectSubtitle: string,
+	description: string,
+	info: {
+		year: int,
+		typeOfWork: string,
+		industry: string,
+	},
+	tags: [strings],
+	imgs: [strings],
+	links: {
+		hasFigma: string,
+		hasFigmaPrototype: string,
+		hasUX: string,
+		hasURL: string,
+		hasPlayStore: string,
+		hasGit: string,
+		hasPDF: string,
+		hasSpotify: string,
+		hasVimeo: string,
+		hasYoutube: string
+	}
+}
+*/
+
+
+
 const aboutPortfolio ={
 	name: "About this portfolio",
 	description:"This portfolio has been created with React + Next.js. Here you will find some projects I developed it or/and designed it. Furthermore, you can see the complete code in the git repository, and the figma guide project.",

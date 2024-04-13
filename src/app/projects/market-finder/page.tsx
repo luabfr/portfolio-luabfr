@@ -1,5 +1,5 @@
 "use client"
-import React,{ useState , useEffect}from "react";
+import React,{ useState , useEffect} from "react";
 import useApiMeli from "./hooks/useApiMeLi"
 import Layout from "antd/es/layout";
 import { QuestionCircleOutlined,ArrowLeftOutlined } from '@ant-design/icons';

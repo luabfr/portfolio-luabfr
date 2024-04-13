@@ -1,7 +1,7 @@
 "use client"
 import styled from "styled-components"
-import AnimatedOrbit from "./AnimatedOrbit/AnimatedOrbit"
-import AnimatedTextScroll from "./AnimatedTextScroll/AnimatedTextScroll"
+import AnimatedOrbit from "../AnimatedOrbit/AnimatedOrbit"
+import AnimatedTextScroll from "../AnimatedTextScroll/AnimatedTextScroll"
 
 const Container = styled.div`
 	width: 100vw;
@@ -15,7 +15,7 @@ const Container = styled.div`
 const Section = styled.section`
 	height: 100vh;
 	width: 100%;
-	background: chocolate;
+	background: palegoldenrod;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -36,7 +36,7 @@ const TestPage = () => {
 
 	return(
 		<Container>
-			<Section>
+			{/* <Section>
 				<AnimatedOrbit/>
 			</Section>
 
@@ -50,7 +50,11 @@ const TestPage = () => {
 
 			<Section2>
 				<h2>Section 4</h2>
-			</Section2>
+			</Section2> */}
+
+			<Section>
+				<h1>Test Baufest</h1>
+			</Section>
 
 		</Container>	
 	)

@@ -1,0 +1,25 @@
+{
+  "projectName": "MarketFinder",
+  "projectSubtitle": "A MercadoLibre Frontend Challenge",
+  "description": "Based on the MercadoLibre Test Challenge, MarketFinder is a personal project I developed to enhance my coding skills. \nThe user can search for a product, and the app connects to the MercadoLibre API to return a list of products that match the user's request. Furthermore, the app includes filters and a dynamic detail view for the product selected by the user.",
+  "info": {
+    "year": "2023",
+    "typeOfWork": "Webapp",
+    "industry": "Code Challenge"
+  },
+  "tags": [
+    "React",
+    "Next.js",
+    "Ant Design",
+    "API Rest",
+    "TypeScript"
+  ],
+  "imgs": [
+    "market-finder/market-finder-1.png",
+    "market-finder/market-finder-2.png"
+  ],
+  "links": {
+    "hasUrl": "projects/market-finder",
+    "hasGit": "https://github.com/luabfr/portfolio-luabfr/tree/master/src/app/projects/market-finder"
+  }
+}
