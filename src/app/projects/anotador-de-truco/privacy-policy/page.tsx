@@ -6,6 +6,9 @@ const Wrap = styled.div`
 	font-family: Arial, Helvetica, sans-serif;
 	padding: 2rem 10vw;
 
+	a{
+		color: #ff33ff;
+	}
 `
 
 const ScreenAnotadorDeTruco = () => {
@@ -13,87 +16,100 @@ const ScreenAnotadorDeTruco = () => {
 		<Wrap>
 			<h1>{"Política de Privacidad de la Aplicación 'Anotador de Truco'"}</h1>
 
+			<p><strong>{"Última actualización:"}</strong> 05/03/2026</p>
+
+			<h2>{"Información general"}</h2>
 			<p>
-				POLÍTICA DE PRIVACIDAD
+				{"Esta aplicación (“Anotador de Truco”) es desarrollada y operada por Luciano Fritschy. La presente Política de Privacidad describe cómo se recopila, utiliza y protege la información de los usuarios."}
+			</p>
 
-Última actualización: 05/03/2026
+			<h2>{"Información que recopilamos"}</h2>
+			<p>
+				{"Anotador de Truco no recopila directamente información personal identificable como nombre, correo electrónico o dirección."}
+			</p>
 
-Información general
+			<p>
+				{"Sin embargo, terceros proveedores de servicios pueden recopilar automáticamente cierta información técnica, incluyendo:"}
+			</p>
 
-Esta aplicación (“Anotador de Truco”) es desarrollada y operada por Luciano Fritschy. La presente Política de Privacidad describe cómo se recopila, utiliza y protege la información de los usuarios.
+			<ul>
+				<li>{"Identificadores del dispositivo"}</li>
+				<li>{"Dirección IP"}</li>
+				<li>{"Datos de uso y diagnóstico"}</li>
+				<li>{"Identificador de publicidad (Advertising ID)"}</li>
+				<li>{"Información sobre interacciones con anuncios"}</li>
+			</ul>
 
-Información que recopilamos
+			<h2>{"Publicidad"}</h2>
+			<p>
+				{"Anotador de Truco utiliza servicios de publicidad proporcionados por Google AdMob. AdMob puede recopilar y procesar datos con fines de mostrar anuncios personalizados o no personalizados."}
+			</p>
 
-La App no recopila directamente información personal identificable como nombre, correo electrónico o dirección.
+			<p>
+				{"Para más información sobre cómo Google utiliza los datos, puede consultar:"}
+				<br />
+				<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">
+					https://policies.google.com/technologies/ads
+				</a>
+			</p>
 
-Sin embargo, terceros proveedores de servicios pueden recopilar automáticamente cierta información técnica, incluyendo:
+			<h2>{"Uso de la información"}</h2>
+			<p>
+				{"La información recopilada por terceros se utiliza para:"}
+			</p>
 
-Identificadores del dispositivo
+			<ul>
+				<li>{"Mostrar anuncios relevantes"}</li>
+				<li>{"Mejorar el rendimiento y estabilidad de la App"}</li>
+				<li>{"Analizar métricas de uso"}</li>
+				<li>{"Prevenir fraudes"}</li>
+			</ul>
 
-Dirección IP
+			<h2>{"Compartición de información"}</h2>
+			<p>
+				{"Anotador de Truco no vende información personal."}
+			</p>
 
-Datos de uso y diagnóstico
+			<p>
+				{"Los datos pueden ser compartidos con proveedores de servicios como Google AdMob únicamente para la prestación de servicios publicitarios y analíticos."}
+			</p>
 
-Identificador de publicidad (Advertising ID)
+			<h2>{"Derechos del usuario"}</h2>
+			<p>
+				{"Dependiendo de su jurisdicción, el usuario puede tener derecho a:"}
+			</p>
 
-Información sobre interacciones con anuncios
+			<ul>
+				<li>{"Solicitar acceso a sus datos"}</li>
+				<li>{"Solicitar la eliminación de datos"}</li>
+				<li>{"Retirar el consentimiento para anuncios personalizados"}</li>
+				<li>{"Limitar el seguimiento publicitario desde la configuración de su dispositivo"}</li>
+			</ul>
 
-Publicidad
+			<p>
+				{"En dispositivos Android, puede restablecer o limitar el identificador publicitario desde:"}
+				<br />
+				{"Configuración > Privacidad > Anuncios."}
+			</p>
 
-"Anotador de Truco" utiliza servicios de publicidad proporcionados por Google AdMob. AdMob puede recopilar y procesar datos con fines de mostrar anuncios personalizados o no personalizados.
+			<h2>{"Seguridad"}</h2>
+			<p>
+				{"Se implementan medidas razonables para proteger la información contra accesos no autorizados, alteraciones o divulgaciones indebidas."}
+			</p>
 
-Para más información sobre cómo Google utiliza los datos, puede consultar:
-https://policies.google.com/technologies/ads
+			<h2>{"Cambios en esta política"}</h2>
+			<p>
+				{"Esta Política puede actualizarse periódicamente. Se recomienda revisarla regularmente."}
+			</p>
 
-Uso de la información
-
-La información recopilada por terceros se utiliza para:
-
-Mostrar anuncios relevantes
-
-Mejorar el rendimiento y estabilidad de "Anotador de Truco"
-
-Analizar métricas de uso
-
-Prevenir fraudes
-
-Compartición de información
-
-"Anotador de Truco" no vende información personal.
-
-Los datos pueden ser compartidos con proveedores de servicios como Google AdMob únicamente para la prestación de servicios publicitarios y analíticos.
-
-Derechos del usuario
-
-Dependiendo de su jurisdicción, el usuario puede tener derecho a:
-
-Solicitar acceso a sus datos
-
-Solicitar la eliminación de datos
-
-Retirar el consentimiento para anuncios personalizados
-
-Limitar el seguimiento publicitario desde la configuración de su dispositivo
-
-En dispositivos Android, puede restablecer o limitar el identificador publicitario desde:
-Configuración → Privacidad → Anuncios.
-
-Seguridad
-
-Se implementan medidas razonables para proteger la información contra accesos no autorizados, alteraciones o divulgaciones indebidas.
-
-Cambios en esta política
-
-Esta Política puede actualizarse periódicamente. Se recomienda revisarla regularmente.
-
-Contacto
-
-Si tiene preguntas sobre esta Política de Privacidad, puede contactarnos en:
-luabfr@gmail.com
+			<h2>{"Contacto"}</h2>
+			<p>
+				{"Si tiene preguntas sobre esta Política de Privacidad, puede contactarnos en:"}
+				<br />
+				luabfr@gmail.com
 			</p>
 		</Wrap>
 	)
 }
-
 
 export default ScreenAnotadorDeTruco

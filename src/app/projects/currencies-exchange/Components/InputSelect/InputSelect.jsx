@@ -28,6 +28,8 @@ const InputSelect = ({ selectOptions,label }) => {
 		<div>
 			<Label>{label}</Label>
 			<StyledSelect
+				instanceId="currency-base-select"
+				inputId="currency-base-select-input"
 				options={optionsInArray}
 				// onChange={handleSelectChange}
 				defaultValue={'USD'} 

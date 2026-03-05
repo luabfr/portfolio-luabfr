@@ -12,9 +12,9 @@ export const formatPrice = (price: number,currency_id: string) => {
 
 export const orderProductsByPrice = (products: SingleProduct[],filterSortState: string) => {
 	if (filterSortState === "MayorToMinor") {
-		return products.sort((a,b) => b.price - a.price);
+		return [...products].sort((a,b) => b.price - a.price);
 	} else if (filterSortState === "MinorToMayor") {
-		return products.sort((a,b) => a.price - b.price);
+		return [...products].sort((a,b) => a.price - b.price);
 	} else {
 		return products
 	}

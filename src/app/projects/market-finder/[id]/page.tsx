@@ -38,7 +38,7 @@ const Page = ({ params }: PageProps)=>{
 		return <LayoutLoading/>
 	}
 	if (error ) {
-		return <LayoutError error={error.message} />;
+		return <LayoutError error={error} />;
 	}
 	
 	const changeImgHandler = ( imageUrl:string )=>{

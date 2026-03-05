@@ -15,10 +15,8 @@ const Wrap = styled.div`
 	box-sizing: border-box;
 
 	a{
-		/* font-size: 1.4rem; */
 		color: gold;
 	}
-
 `
 
 const LeftDiv = styled.div`
@@ -26,44 +24,40 @@ const LeftDiv = styled.div`
 `
 
 const RightDiv = styled.div`
-	padding: 2rem ;
+	padding: 2rem;
 `
 
 const ScreenAnotadorDeTruco = () => {
 	return(
-
 		<Wrap>
-
-
 			<LeftDiv>
 				<h1>{"Anotador de Truco"}</h1>
 				<p>
-					{"Aplicacion diseñada con gran foco el UX destinada a Anotar el puntaje de tus partidas de Truco (juego de cartas)."}
+					{"Aplicación diseñada con gran foco en UX destinada a anotar el puntaje de tus partidas de Truco (juego de cartas)."}
 				</p>
 				<hr />
 
 				<h2>
-					{'Politicas de Privacidad'}
+					{"Políticas de Privacidad"}
 				</h2>
 				<p>
 					{"Puedes encontrar las "}
-					<Link href="./anotador-de-truco/privacy-policy">
-						{'Politicas de Privacidad aquí.'}
+					<Link href="/projects/anotador-de-truco/privacy-policy">
+						{"Políticas de Privacidad aquí."}
 					</Link>
 				</p>
 
 				<hr />
 				<h2>
-					{'Descarga la App'}
+					{"Descarga la App"}
 				</h2>
 				<p>
 					{"Puedes encontrar la aplicación en la Play Store: "}
-					<Link href="#">
-						{'Descarga ANOTADOR DE TRUCO aquí.'}
+					<Link href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
+						{"Descarga ANOTADOR DE TRUCO aquí."}
 					</Link>
 				</p>
 			</LeftDiv>
-
 
 			<RightDiv>
 				<Image
@@ -73,11 +67,8 @@ const ScreenAnotadorDeTruco = () => {
 					alt="Anotador de Truco - App"
 				/>
 			</RightDiv>
-			
-	
 		</Wrap>
 	)
 }
-
 
 export default ScreenAnotadorDeTruco

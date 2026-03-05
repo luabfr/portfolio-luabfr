@@ -12,7 +12,7 @@ const App: FC = ()=> {
 
   const [sliceLength, setSliceLength] = useState(4);
   const handleSliceLength = () => {
-    setSliceLength(sliceLength + 4);
+    setSliceLength((prev) => prev + 4);
   };
   return (    
     <Provider store={store}>

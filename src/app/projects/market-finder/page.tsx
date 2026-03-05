@@ -49,6 +49,9 @@ const MeliTest =()=>{
 	const onChangeSortSelect = (value: string) => {
 		setFilterSortState(value)
 	}
+	useEffect(() => {
+		setPagination(1);
+	}, [inputSearchValue, filterConditionState, filterCurrencyState, filterSortState]);
 
 
 	const { data , breadcrumbState , loading , error } = useApiMeli(inputSearchValue);
@@ -79,6 +82,7 @@ const MeliTest =()=>{
 
 		const productsFilteredAndOrdered: SingleProduct[] = orderProductsByPrice(productsFiltered, filterSortState);
 		const productsByPagination: SingleProduct[][] = orderProductsForPagination(productsFilteredAndOrdered);
+		const currentPageProducts: SingleProduct[] = productsByPagination[pagination - 1] ?? [];
 	
 
 		// Aca, se pasa el resultado de "orderProductsByPrice(productsFiltered,filterSortState)"
@@ -167,7 +171,7 @@ const MeliTest =()=>{
 							<Flex style={{ marginBottom: "1rem" }}>
 								<Breadcrumb separator=">" items={breadcrumbState} />
 							</Flex>
-							{productsByPagination.length !== 0 && productsByPagination[(pagination-1)].map((item,index) => (
+							{currentPageProducts.length !== 0 && currentPageProducts.map((item,index) => (
 								<Card style={{ width: "100%" , }} key={index} >
 									<Link href={`/projects/market-finder/${item.id}`} >
 										<Flex>
@@ -192,7 +196,7 @@ const MeliTest =()=>{
 							))}		
 
 							{/* Si no hay productos: */}
-							{productsByPagination.length === 0 &&
+							{currentPageProducts.length === 0 &&
 								<Flex style={{padding: "8rem 0", justifyContent: "center"}}>
 									<Title level={3}>
 										{"No products found..."}

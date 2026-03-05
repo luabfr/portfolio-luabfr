@@ -52,7 +52,7 @@ export const projectMarketFinder = {
 	tags: ["React", "Next.js", "Ant Design", "API Rest", "TypeScript"],
 	imgs: ["market-finder/market-finder-1.png", "market-finder/market-finder-2.png"],
 	links: {
-		hasUrl: "projects/market-finder",
+		// hasUrl: "projects/market-finder",
 		hasGit: "https://github.com/luabfr/portfolio-luabfr/tree/master/src/app/projects/market-finder"
 	}
 }

@@ -14,8 +14,11 @@ export const getSymbolsFromAPI = createAsyncThunk(
 	'currenciesExchange/symbols',
 	async (payload: any) => {
 		const response = await fetch(`${freeApiURL}latest?${freeApiKey}&currencies=${payload.currenciesList}`);
+		if (!response.ok) {
+			throw new Error('Could not load symbols');
+		}
 		const data = await response.json();
-		return data.data;
+		return data?.data ?? {};
 	}
 );
 
@@ -24,7 +27,7 @@ export const getRatesFromAPI = createAsyncThunk(
 	async (payload: any) => {
 		const response = await fetch(`${freeApiURL}historical?${freeApiKey}&currencies=${payload.currenciesList}&base_currency=${payload.currencyBase}&date_from=${payload.dateFrom}T00%3A00%3A00.000Z&date_to=${payload.dateTo}T00%3A00%3A00.000Z`);
 		const data = await response.json();
-		return data.data;
+		return data?.data ?? {};
 	}
 );
 
@@ -48,16 +51,20 @@ const currenciesExchangeSlice = createSlice({
 	extraReducers: (builder) => {
 		builder
 			.addCase(getSymbolsFromAPI.fulfilled, (state, action) => {
-				state.currenciesList = action.payload;
+				state.currenciesList = action.payload && typeof action.payload === 'object'
+					? action.payload
+					: {};
 			})
 			.addCase(getSymbolsFromAPI.rejected, (state, action) => {
-				state.currenciesList = action.error;
+				state.currenciesList = {};
 			})
 			.addCase(getRatesFromAPI.fulfilled, (state, action) => {
-				state.currenciesRatesByBaseAndDate = action.payload;
+				state.currenciesRatesByBaseAndDate = action.payload && typeof action.payload === 'object'
+					? action.payload
+					: {};
 			})
 			.addCase(getRatesFromAPI.rejected, (state, action) => {
-				state.currenciesRatesByBaseAndDate = action.error;
+				state.currenciesRatesByBaseAndDate = {};
 			});
 	},
 });

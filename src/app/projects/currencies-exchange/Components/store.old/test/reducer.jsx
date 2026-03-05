@@ -10,7 +10,7 @@ const initialState = {
 
 
 
-export default (state = initialState,actions) => {
+const testReducer = (state = initialState,actions) => {
 	switch (actions.type) {
 		case "SUMAR":
 			return {
@@ -54,6 +54,7 @@ export default (state = initialState,actions) => {
 
 }
 
+export default testReducer
 
 
 
