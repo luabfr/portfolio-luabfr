@@ -8,12 +8,20 @@ const TextReplacer = ({labels, thisInterval}) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   useEffect(() => {
+    if (!labels?.length) {
+      return;
+    }
+
     const interval = setInterval(() => {
       setCurrentTextIndex((prevIndex) => (prevIndex + 1) % labels.length);
     },thisInterval);
 
     return () => clearInterval(interval); 
-  }, []);
+  }, [labels, thisInterval]);
+
+  if (!labels?.length) {
+    return null;
+  }
 
  
   

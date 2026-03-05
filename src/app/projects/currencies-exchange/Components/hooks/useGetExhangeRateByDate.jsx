@@ -2,14 +2,12 @@ import { useState,useEffect } from 'react';
 import { requestOptions } from './useAPIKey';
 
 const useGetExhangeRateByDate = (date,currencyBase,currencySymbolsList) => {
-
-	date = "2020-05-16"
-	// currencySymbolsList ="GBP%2C%20JPY%2C%20USD"
-	// currencySymbolsList = "GPB,JPY,EUR"
-	// currencyBase="USD"
-
 	const [ratesByDate,setRatesByDate] = useState({});
 	useEffect(() => {
+		if (!date || !currencyBase || !currencySymbolsList) {
+			setRatesByDate({});
+			return;
+		}
 
 		async function fetchSymbols() {
 			// el formate de envio de DATE es: "2020-05-16"
@@ -24,7 +22,7 @@ const useGetExhangeRateByDate = (date,currencyBase,currencySymbolsList) => {
 		}
 
 		fetchSymbols()
-	},[]);
+	},[date,currencyBase,currencySymbolsList]);
 
 	return ratesByDate
 }

@@ -13,9 +13,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    if (loading != false){
-      setLoading(false);
-    }    
+    setLoading(false);
   }, []);
 
 

@@ -1,18 +1,15 @@
 "use client"
-import React,{ useEffect,useState,FC } from 'react'
+import React from 'react'
 import { UlCurrency,LiCurrecy,StationFlag,StationName,StationAmount } from '../CustomStyledComponents/CustomStyledComponents';
-import { useSelector,useDispatch } from 'react-redux';
-import { connect } from 'react-redux';
-import { getRatesFromAPI } from '@/app/store/currenciesExchangeReducer';
+import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import {currencyToFlag} from "./CurrencyFlags.jsx"
 
 const CurrencyList = ({ sliceLength }) => {
 
-	const dateFrom = useSelector((state) => state.currenciesExchange.dateFrom);
-	const dataCurrency = useSelector((state) =>  state.currenciesExchange.currenciesRatesByBaseAndDate );
-	
-	const firstValue = Object.values(dataCurrency)[0];
+	const dataCurrency = useSelector((state) => state.currenciesExchange?.currenciesRatesByBaseAndDate);
+	const safeDataCurrency = dataCurrency && typeof dataCurrency === 'object' ? dataCurrency : {};
+	const firstValue = Object.values(safeDataCurrency)[0] ?? {};
 	
 	for (const property in firstValue) {
 		if (Object.prototype.hasOwnProperty.call(firstValue,property)) { // TS no labura bien con for...in . Esto es necesario por TS
@@ -49,11 +46,16 @@ const CurrencyList = ({ sliceLength }) => {
 	const items = keysSliced.map((key) => (
 		<LiCurrecy key={key}>
 			<StationFlag>				
-				<Image 
-					src={`https://flagcdn.com/w40/${currencyToFlag[key]}.png`} 
-					alt={key } 
-					width={40} 
-					height={40}/>
+				{currencyToFlag[key] ? (
+					<Image
+						src={`https://flagcdn.com/w40/${currencyToFlag[key]}.png`}
+						alt={key}
+						width={40}
+						height={40}
+					/>
+				) : (
+					<span>{key}</span>
+				)}
 			</StationFlag>
 			<StationName>{key}</StationName>
 			<StationAmount>{conversion[key]}</StationAmount>
